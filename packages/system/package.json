@@ -1,0 +1,68 @@
+{
+  "name": "@brb-ui/system",
+  "description": "BRB UI Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "system",
+    "css-in-js",
+    "emotion",
+    "ui-component",
+    "ui",
+    "brb",
+    "style-props",
+    "design-system"
+  ],
+  "author": "Hippo <hippowuyufan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brb-tech/brb-ui.git",
+    "directory": "packages/system"
+  },
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "dependencies": {
+    "lodash.merge": "^4.6.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0"
+  },
+  "devDependencies": {
+    "@types/lodash.merge": "^4.6.7",
+    "@types/react": "^18.2.0",
+    "clean-package": "^2.2.0",
+    "react": "^18.2.0",
+    "tsup": "^7.2.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0"
+  },
+  "tsup": {
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "target": "es2019",
+    "clean": true,
+    "sourcemap": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "clean-package": "../../clean-package.config.json"
+}

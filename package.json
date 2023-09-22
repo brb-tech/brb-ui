@@ -1,0 +1,53 @@
+{
+  "name": "brb-ui",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brb-tech/brb-ui.git"
+  },
+  "author": "Hippo <hippowuyufan@gmail.com>",
+  "license": "MIT",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:@brb-ui/storybook": "turbo run dev --filter=@brb-ui/storybook...",
+    "build": "turbo run build",
+    "build:packages": "turbo run build --filter=./packages/*",
+    "test": "turbo run test",
+    "lint": "eslint apps/**/src packages/**/src --ext .ts,.tsx --config .eslintrc --cache",
+    "format:write": "prettier --write apps/**/src packages/**/src --cache",
+    "format:check": "prettier --check apps/**/src packages/**/src --cache",
+    "typecheck": "tsc --noEmit",
+    "clean": "turbo run clean && rm -rf node_modules && rm -rf out",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.7.1",
+    "@commitlint/config-conventional": "^17.7.0",
+    "@types/node": "^17.0.12",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "@typescript-eslint/parser": "^6.7.0",
+    "eslint": "^8.49.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-lodash": "^7.4.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3",
+    "turbo": "1.10.13"
+  },
+  "dependencies": {
+    "@brb-ui/system": "workspace:^",
+    "typescript": "^5.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "@brb-ui/button",
+  "description": "A React component that is a base button.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "button",
+    "button-group",
+    "react",
+    "nextjs",
+    "brb-ui",
+    "component",
+    "clickable"
+  ],
+  "author": "Hippo <hippowuyufan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brb-tech/brb-ui.git",
+    "directory": "packages/button"
+  },
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "clean-package": "^2.2.0",
+    "react": "^18.2.0",
+    "tsup": "^7.2.0"
+  },
+  "dependencies": {
+    "@brb-ui/system": "workspace:*",
+    "@brb-ui/utils": "workspace:*",
+    "@brb-ui/animations": "workspace:*",
+    "@brb-ui/transition": "workspace:*",
+    "@brb-ui/icon": "workspace:*",
+    "@brb-ui/icons": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "tsup": {
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "target": "es2019",
+    "clean": true,
+    "sourcemap": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "clean-package": "../../clean-package.config.json"
+}

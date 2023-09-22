@@ -1,0 +1,63 @@
+{
+  "name": "@brb-ui/icon",
+  "description": "A React component that is a base icon.",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "keywords": [
+    "icon",
+    "component",
+    "react",
+    "nextjs",
+    "brb-ui"
+  ],
+  "author": "Hippo <hippowuyufan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brb-tech/brb-ui.git",
+    "directory": "packages/icon"
+  },
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "scripts": {
+    "build": "tsup src --dts",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
+    "prepack": "clean-package",
+    "postpack": "clean-package restore"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "clean-package": "^2.2.0",
+    "react": "^18.2.0",
+    "react-icons": "^4.11.0",
+    "tsup": "^7.2.0"
+  },
+  "dependencies": {
+    "@brb-ui/system": "workspace:*",
+    "@brb-ui/animations": "workspace:*",
+    "@brb-ui/utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "tsup": {
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "target": "es2019",
+    "clean": true,
+    "sourcemap": true
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "clean-package": "../../clean-package.config.json"
+}
