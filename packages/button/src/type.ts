@@ -33,6 +33,12 @@ export interface ButtonProps extends CreateStyledProps<"button"> {
   size?: "large" | "middle" | "small";
 
   /**
+   * @description icon placement
+   * @default "right"
+   */
+  iconPlacement?: "left" | "right";
+
+  /**
    * @description Icon size
    * @default undefined
    */

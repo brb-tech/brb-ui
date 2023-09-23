@@ -14,6 +14,8 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   overflow: hidden;
   transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
+  ${({ iconPlacement }) => (iconPlacement === "left" ? { flexDirection: "row-reverse" } : {})}
+
   ${({ block }) => (block ? { width: "100%" } : {})}
 
   ${({ size }) => {
