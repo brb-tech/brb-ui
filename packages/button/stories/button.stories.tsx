@@ -18,7 +18,7 @@ export const Default: React.FC = () => {
   }, [loading]);
 
   return (
-    <Button onClick={setLoading.bind(null, true)} loading={loading} iconPlacement="left">
+    <Button onClick={setLoading.bind(null, true)} loading={loading} iconPlacement="left" size="large">
       this is a button
     </Button>
   );

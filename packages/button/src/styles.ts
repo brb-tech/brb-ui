@@ -1,6 +1,13 @@
 import { styled } from "@brb-ui/system";
 import { ButtonProps } from "./type";
-import { Icon } from "@brb-ui/icon";
+import { Icon, IconProps } from "@brb-ui/icon";
+import { CSSProperties } from "react";
+
+export const btnFontSize: Record<Required<ButtonProps>["size"], number> = {
+  large: 16,
+  middle: 14,
+  small: 12
+};
 
 export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading?: string }>`
   display: inline-flex;
@@ -24,28 +31,28 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         return {
           height: 48,
           borderRadius: 10,
-          fontSize: 16,
+          fontSize: btnFontSize["large"],
           padding: "0 16px"
         };
       case "middle":
         return {
           height: 40,
           borderRadius: 8,
-          fontSize: 14,
+          fontSize: btnFontSize["middle"],
           padding: "0 12px"
         };
       case "small":
         return {
           height: 32,
           borderRadius: 6,
-          fontSize: 12,
+          fontSize: btnFontSize["small"],
           padding: "0 8px"
         };
       default:
         return {
           height: 40,
           borderRadius: 8,
-          fontSize: 14,
+          fontSize: btnFontSize["middle"],
           padding: "0 12px"
         };
     }
@@ -55,8 +62,6 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
     switch (scheme) {
       case "default":
         if (variant === "contained") {
-          console.log(theme);
-
           return {
             background: theme.system.blueGray[3],
             color: theme.system.gray[11]
@@ -524,12 +529,20 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   }
 `;
 
-export const IconWrapper = styled(Icon)<{ btnSize: ButtonProps["size"] }>(({ btnSize }) => ({
-  // marginLeft: 0,
-  // width: 0,
-  // transform: "scale(0)",
-  // opacity: 0,
-  // transition: "all 0.3s",
-  // transform: "scale(1)",
-  // opacity: 1
-}));
+export const IconWrapper = styled(Icon)<{ btnSize: ButtonProps["size"] }>(({ btnSize }) => ({}));
+
+export const marginKey: Record<Required<ButtonProps>["iconPlacement"], keyof CSSProperties> = {
+  left: "marginInlineEnd",
+  right: "marginInlineStart"
+};
+
+export const marginValue: Record<Required<ButtonProps>["size"], number> = {
+  large: 8,
+  middle: 6,
+  small: 4
+};
+
+export const getIconWidth = (btnSize: ButtonProps["size"], size?: IconProps["size"]) => {
+  if (size) return size;
+  return btnFontSize[btnSize!];
+};
