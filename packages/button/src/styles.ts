@@ -405,7 +405,7 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
     }}
   }
 
-  &[disabled] {
+  &:not([loading])[disabled] {
     cursor: not-allowed;
   }
   &[disabled],
@@ -528,8 +528,6 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
     }}
   }
 `;
-
-export const IconWrapper = styled(Icon)<{ btnSize: ButtonProps["size"] }>(({ btnSize }) => ({}));
 
 export const marginKey: Record<Required<ButtonProps>["iconPlacement"], keyof CSSProperties> = {
   left: "marginInlineEnd",

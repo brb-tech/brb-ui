@@ -2,12 +2,13 @@ import { forwardRef } from "react";
 import { __DEV__, cx } from "@brb-ui/utils";
 import { ButtonProps } from "./type";
 import { useTheme } from "@brb-ui/system";
-import { IconWrapper, Wrapper, marginKey, marginValue, getIconWidth } from "./styles";
+import { Wrapper, marginKey, marginValue, getIconWidth } from "./styles";
 import { LoadingOutlinedIcon } from "@brb-ui/icons";
 import { animated, useTransition } from "@brb-ui/transition";
+import { Icon } from "@brb-ui/icon";
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, children, loading, onClick, size, iconProps, iconPlacement, ...props }, ref) => {
+  ({ className, children, loading, size, iconProps, iconPlacement, disabled, ...props }, ref) => {
     const { prefixCls } = useTheme();
 
     const transitions = useTransition(loading, {
@@ -28,10 +29,10 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         data-scheme={props.scheme}
         data-variant={props.variant}
         loading={loading ? "" : undefined}
-        onClick={!loading ? onClick : undefined}
         iconPlacement={iconPlacement}
         size={size}
         ref={ref}
+        disabled={disabled || loading}
         {...props}
       >
         {children}
@@ -43,7 +44,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
                 style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
                 className={`${prefixCls}-slide`}
               >
-                <IconWrapper svg={<LoadingOutlinedIcon />} animation="rotation" btnSize={size} {...iconProps} />
+                <Icon svg={<LoadingOutlinedIcon />} animation="rotation" {...iconProps} />
               </animated.div>
             )
           );
