@@ -15,9 +15,9 @@
     "dev:storybook": "storybook dev -p 8000",
     "build:storybook": "storybook build -o build",
     "test": "turbo run test",
-    "lint": "eslint apps/**/src packages/**/src --ext .ts,.tsx --config .eslintrc --cache",
-    "format:write": "prettier --write apps/**/src packages/**/src --cache",
-    "format:check": "prettier --check apps/**/src packages/**/src --cache",
+    "lint": "eslint packages/**/src --ext .ts,.tsx --config .eslintrc --cache",
+    "format:write": "prettier --write packages/**/src --cache",
+    "format:check": "prettier --check packages/**/src --cache",
     "typecheck": "tsc --noEmit",
     "clean": "turbo run clean && rm -rf node_modules && rm -rf out",
     "prepare": "husky install"
