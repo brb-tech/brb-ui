@@ -287,7 +287,7 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
     }}
   }
 
-  :focus {
+  :active {
     ${({ theme, variant, scheme }) => {
       switch (scheme) {
         case "default":

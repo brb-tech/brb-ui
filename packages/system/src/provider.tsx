@@ -37,7 +37,6 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({ children,
 
     return merge(pre, next);
   }, []);
-  console.log(themeObject);
 
   return (
     // <Context.Provider value={{ themeMode, setThemeMode: setThemeModeMiddleware, hardThemeMode, themeCookie }}>
