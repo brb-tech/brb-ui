@@ -9,6 +9,12 @@ export interface ButtonProps extends CreateStyledProps<"button"> {
   block?: boolean;
 
   /**
+   * @description border radius 50%
+   * @default false
+   */
+  circle?: boolean;
+
+  /**
    * @description theme color scheme
    * @default primary
    */
@@ -33,14 +39,38 @@ export interface ButtonProps extends CreateStyledProps<"button"> {
   size?: "large" | "middle" | "small";
 
   /**
-   * @description icon placement
-   * @default "right"
+   * @description Icon placement
+   * @default right
    */
   iconPlacement?: "left" | "right";
+
+  /**
+   * @description icon svg
+   * @default
+   */
+  icon?: IconProps["svg"];
+
+  /**
+   * @description icon svg
+   * @default LoadingOutlinedIcon
+   */
+  loadingIcon?: IconProps["svg"];
 
   /**
    * @description Icon size
    * @default undefined
    */
-  iconProps?: Pick<IconProps, "size" | "svg" | "animation" | "color">;
+  iconSize?: IconProps["size"];
+
+  /**
+   * @description Icon animation
+   * @default rotation
+   */
+  iconAnimation?: IconProps["animation"];
+
+  /**
+   * @description Icon color
+   * @default undefined
+   */
+  iconColor?: IconProps["color"];
 }

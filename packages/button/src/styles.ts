@@ -9,7 +9,25 @@ export const btnFontSize: Record<Required<ButtonProps>["size"], number> = {
   small: 12
 };
 
-export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading?: string }>`
+export const btnHeight: Record<Required<ButtonProps>["size"], number> = {
+  large: 48,
+  middle: 40,
+  small: 32
+};
+
+export const btnBorderRadius: Record<Required<ButtonProps>["size"], number> = {
+  large: 10,
+  middle: 8,
+  small: 6
+};
+
+export const btnPaddingInline: Record<Required<ButtonProps>["size"], number> = {
+  large: 16,
+  middle: 12,
+  small: 8
+};
+
+export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading?: string; hasChildren?: boolean }>`
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,42 +37,25 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
   ${({ iconPlacement }) => (iconPlacement === "left" ? { flexDirection: "row-reverse" } : {})}
 
   ${({ block }) => (block ? { width: "100%" } : {})}
 
-  ${({ size }) => {
-    switch (size) {
-      case "large":
-        return {
-          height: 48,
-          borderRadius: 10,
-          fontSize: btnFontSize["large"],
-          padding: "0 16px"
-        };
-      case "middle":
-        return {
-          height: 40,
-          borderRadius: 8,
-          fontSize: btnFontSize["middle"],
-          padding: "0 12px"
-        };
-      case "small":
-        return {
-          height: 32,
-          borderRadius: 6,
-          fontSize: btnFontSize["small"],
-          padding: "0 8px"
-        };
-      default:
-        return {
-          height: 40,
-          borderRadius: 8,
-          fontSize: btnFontSize["middle"],
-          padding: "0 12px"
-        };
+  ${({ size, hasChildren, circle }) => {
+    if (size) {
+      return {
+        height: btnHeight[size],
+        borderRadius: circle ? "50%" : btnBorderRadius[size],
+        fontSize: btnFontSize[size],
+        ...(hasChildren
+          ? {
+              paddingInline: btnPaddingInline[size]
+            }
+          : {
+              width: btnHeight[size]
+            })
+      };
     }
   }};
 
@@ -529,12 +530,16 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   }
 `;
 
-export const marginKey: Record<Required<ButtonProps>["iconPlacement"], keyof CSSProperties> = {
+export const IconWrapper = styled(Icon)<{ _style?: CSSProperties }>(({ _style }) => {
+  return _style ? { ..._style } : {};
+});
+
+export const iconMarginKey: Record<Required<ButtonProps>["iconPlacement"], keyof CSSProperties> = {
   left: "marginInlineEnd",
   right: "marginInlineStart"
 };
 
-export const marginValue: Record<Required<ButtonProps>["size"], number> = {
+export const iconMarginValue: Record<Required<ButtonProps>["size"], number> = {
   large: 8,
   middle: 6,
   small: 4

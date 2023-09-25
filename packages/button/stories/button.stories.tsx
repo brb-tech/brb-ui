@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Button } from "../src";
 import { css } from "@brb-ui/system";
 import { BsFacebook } from "react-icons/bs";
-import { LoadingOutlinedIcon } from "@brb-ui/icons";
 
 export default {
   title: "components/button",
@@ -101,20 +100,18 @@ export const Loading: React.FC = () => {
   }, [loading]);
 
   return (
-    <div css={gridRow}>
+    <div css={css([gridRow])}>
       <Button onClick={setLoading.bind(null, true)} loading={loading}>
         Text
       </Button>
 
-      <Button
-        onClick={setLoading.bind(null, true)}
-        loading={loading}
-        iconProps={{
-          svg: !loading ? <BsFacebook /> : undefined
-        }}
-      >
+      <Button onClick={setLoading.bind(null, true)} loading={loading} icon={<BsFacebook />}>
         Facebook
       </Button>
+
+      <Button onClick={setLoading.bind(null, true)} loading={loading} icon={<BsFacebook />} />
+
+      <Button onClick={setLoading.bind(null, true)} loading={loading} icon={<BsFacebook />} circle />
     </div>
   );
 };
