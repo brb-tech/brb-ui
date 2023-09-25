@@ -11,14 +11,14 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, children, loading, size, iconProps, iconPlacement, disabled, ...props }, ref) => {
     const { prefixCls } = useTheme();
 
-    const transitions = useTransition(loading, {
+    const transitions = useTransition(Boolean(loading || iconProps?.svg), {
       initial: { transform: "scale(0)", opacity: 0, width: 0, [marginKey[iconPlacement!]]: 0 },
       from: { transform: "scale(0)", opacity: 0, width: 0, [marginKey[iconPlacement!]]: 0 },
       enter: {
         transform: "scale(1)",
         opacity: 1,
         width: getIconWidth(size, iconProps?.size),
-        [marginKey[iconPlacement!]]: marginValue[size!]
+        [marginKey[iconPlacement!]]: children ? marginValue[size!] : 0
       },
       leave: { transform: "scale(0)", opacity: 0, width: 0, [marginKey[iconPlacement!]]: 0 }
     });
@@ -38,16 +38,20 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         {children}
 
         {transitions((style, item) => {
-          return (
-            item && (
-              <animated.div
-                style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
-                className={`${prefixCls}-slide`}
-              >
-                <Icon svg={<LoadingOutlinedIcon />} animation="rotation" {...iconProps} />
-              </animated.div>
-            )
-          );
+          if (iconProps?.svg) {
+            return <Icon svg={<LoadingOutlinedIcon />} animation={loading ? "rotation" : undefined} {...iconProps} />;
+          } else {
+            return (
+              item && (
+                <animated.div
+                  style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
+                  className={`${prefixCls}-slide`}
+                >
+                  <Icon svg={<LoadingOutlinedIcon />} animation={loading ? "rotation" : undefined} {...iconProps} />
+                </animated.div>
+              )
+            );
+          }
         })}
       </Wrapper>
     );

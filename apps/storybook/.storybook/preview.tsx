@@ -1,6 +1,7 @@
 import React from "react";
 import { Preview } from "@storybook/react";
 import { Provider } from "@brb-ui/system";
+import { themes } from "@storybook/theming";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
@@ -16,6 +17,10 @@ const preview: Preview = {
         color: /(background|color)$/i,
         date: /Date$/
       }
+    },
+    backgrounds: { disable: true },
+    docs: {
+      theme: themes.dark
     }
   },
   decorators: [

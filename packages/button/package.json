@@ -38,15 +38,16 @@
     "@types/react": "^18.2.0",
     "clean-package": "^2.2.0",
     "react": "^18.2.0",
+    "react-icons": "^4.11.0",
     "tsup": "^7.2.0"
   },
   "dependencies": {
-    "@brb-ui/system": "workspace:*",
-    "@brb-ui/utils": "workspace:*",
     "@brb-ui/animations": "workspace:*",
-    "@brb-ui/transition": "workspace:*",
     "@brb-ui/icon": "workspace:*",
-    "@brb-ui/icons": "workspace:*"
+    "@brb-ui/icons": "workspace:*",
+    "@brb-ui/system": "workspace:*",
+    "@brb-ui/transition": "workspace:*",
+    "@brb-ui/utils": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18"

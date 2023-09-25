@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button } from "../src";
 import { css } from "@brb-ui/system";
+import { BsFacebook } from "react-icons/bs";
+import { LoadingOutlinedIcon } from "@brb-ui/icons";
 
 export default {
   title: "components/button",
@@ -72,10 +74,8 @@ export const Default: React.FC = () => {
 };
 
 export const Size: React.FC = () => {
-  console.log(gridRow);
-
   return (
-    <div css={{ width: 240, ...gridRow }}>
+    <div css={css([gridRow, { width: 100 }])}>
       <Button scheme="primary" size="large">
         Large
       </Button>
@@ -101,8 +101,20 @@ export const Loading: React.FC = () => {
   }, [loading]);
 
   return (
-    <Button onClick={setLoading.bind(null, true)} loading={loading}>
-      this is a button
-    </Button>
+    <div css={gridRow}>
+      <Button onClick={setLoading.bind(null, true)} loading={loading}>
+        Text
+      </Button>
+
+      <Button
+        onClick={setLoading.bind(null, true)}
+        loading={loading}
+        iconProps={{
+          svg: !loading ? <BsFacebook /> : undefined
+        }}
+      >
+        Facebook
+      </Button>
+    </div>
   );
 };
