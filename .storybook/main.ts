@@ -1,7 +1,10 @@
 import { StorybookConfig } from "@storybook/react-webpack5";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
-  stories: ["../../../packages/**/*.stories.mdx", "../../../packages/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../packages/**/*.stories.mdx", "../packages/**/*.stories.@(js|jsx|ts|tsx)"],
 
   addons: [
     "@storybook/addon-links",
@@ -38,6 +41,19 @@ const config: StorybookConfig = {
   // staticDirs: ["../public"],
   core: {
     disableTelemetry: true
+  },
+  async babel(config, { configType }) {
+    const presets = [
+      require.resolve("@babel/preset-env"),
+      require.resolve("@babel/preset-react"),
+      require.resolve("@babel/preset-typescript"),
+      require.resolve("@emotion/babel-preset-css-prop")
+    ];
+
+    return {
+      ...config,
+      presets
+    };
   },
   features: {
     buildStoriesJson: true
