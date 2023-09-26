@@ -35,7 +35,7 @@ jobs:
         with:
           commit: "ci(changesets): version packages"
           title: "ci(changesets): version packages"
-          version: pnpm version
+          # version: pnpm version
           publish: pnpm release
           setupGitUser: false
         env:
