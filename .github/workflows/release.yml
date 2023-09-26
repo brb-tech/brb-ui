@@ -33,10 +33,10 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          version: pnpm version
-          publish: pnpm release
           commit: "ci(changesets): version packages"
           title: "ci(changesets): version packages"
+          version: pnpm version
+          publish: pnpm release
           setupGitUser: false
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
