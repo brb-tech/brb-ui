@@ -29,7 +29,7 @@
     "url": "https://github.com/brb-tech/brb-ui/issues"
   },
   "scripts": {
-    "build": "tsup src jsx-runtime --dts",
+    "build": "tsup src --dts",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
     "prepack": "clean-package",
@@ -64,5 +64,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "clean-package": "../../clean-package.config.json"
+  "clean-package": "./clean-package.config.json"
 }
