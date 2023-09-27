@@ -1,1 +1,3 @@
-export * from "@react-spring/web";
+import { useTransition, animated } from "@react-spring/web";
+
+export { useTransition, animated };
