@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/utils",
   "description": "Common utilities and types for BRB UI",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "src/index.ts",
   "files": [

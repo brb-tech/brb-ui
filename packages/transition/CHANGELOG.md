@@ -1,5 +1,15 @@
 # @brb-ui/transition
 
+## 0.0.4
+
+### Patch Changes
+
+- [`9431d3f`](https://github.com/brb-tech/brb-ui/commit/9431d3fc6e0db2609e38852d570e59f85a2c5117) Thanks [@0xhipp0](https://github.com/0xhipp0)! - Fixed release
+
+- Updated dependencies [[`9431d3f`](https://github.com/brb-tech/brb-ui/commit/9431d3fc6e0db2609e38852d570e59f85a2c5117)]:
+  - @brb-ui/system@0.0.4
+  - @brb-ui/utils@0.0.3
+
 ## 0.0.3
 
 ### Patch Changes
