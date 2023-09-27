@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/hooks",
   "description": "A collection of React Hooks for Brb UI components.",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "main": "src/index.ts",
   "files": [
