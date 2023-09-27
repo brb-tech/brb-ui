@@ -1,5 +1,11 @@
 # @brb-ui/system
 
+## 0.0.6
+
+### Patch Changes
+
+- [`da5a8d5`](https://github.com/brb-tech/brb-ui/commit/da5a8d56beacf9d1aed371c10f2d25e0bbd30f59) Thanks [@0xhipp0](https://github.com/0xhipp0)! - Initial release
+
 ## 0.0.5
 
 ### Patch Changes
