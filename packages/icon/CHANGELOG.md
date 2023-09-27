@@ -1,5 +1,16 @@
 # @brb-ui/icon
 
+## 0.0.5
+
+### Patch Changes
+
+- [`9b22eac`](https://github.com/brb-tech/brb-ui/commit/9b22eac2f6a7d88f0eb8f31f12a4d7f73fe8e389) Thanks [@0xhipp0](https://github.com/0xhipp0)! - Initial release
+
+- Updated dependencies [[`9b22eac`](https://github.com/brb-tech/brb-ui/commit/9b22eac2f6a7d88f0eb8f31f12a4d7f73fe8e389)]:
+  - @brb-ui/animations@0.0.5
+  - @brb-ui/system@0.0.5
+  - @brb-ui/utils@0.0.4
+
 ## 0.0.4
 
 ### Patch Changes
