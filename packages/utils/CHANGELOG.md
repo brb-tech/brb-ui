@@ -1,5 +1,11 @@
 # @brb-ui/utils
 
+## 0.0.2
+
+### Patch Changes
+
+- [`e8e8f6f`](https://github.com/brb-tech/brb-ui/commit/e8e8f6fdf392d0d5a49dc47404b97e5c84a9b718) Thanks [@0xhipp0](https://github.com/0xhipp0)! - Initial release
+
 ## 0.0.1
 
 ### Patch Changes
