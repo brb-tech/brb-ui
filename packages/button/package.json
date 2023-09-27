@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/button",
   "description": "A React component that is a base button.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "src/index.ts",
   "files": [
