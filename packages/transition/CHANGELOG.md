@@ -1,5 +1,12 @@
 # @brb-ui/transition
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [[`7423af0`](https://github.com/brb-tech/brb-ui/commit/7423af06d4dc96ee4babc7bd5ddba59d03716322)]:
+  - @brb-ui/system@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
