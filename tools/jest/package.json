@@ -1,0 +1,23 @@
+{
+  "name": "@brb-ui/jest",
+  "private": true,
+  "description": "Encapsulation of BRB UI components test based on jest",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "sideEffects": false,
+  "author": "Hippo <hippowuyufan@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brb-tech/brb-ui.git",
+    "directory": "tools/jest"
+  },
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./setup-test": "./src/setup-test.ts"
+  }
+}

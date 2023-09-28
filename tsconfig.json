@@ -17,6 +17,6 @@
     "allowSyntheticDefaultImports": true,
     "downlevelIteration": true
   },
-  "include": ["packages"],
+  "include": ["packages", "tools"],
   "exclude": ["**/node_modules"]
 }
