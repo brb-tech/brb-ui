@@ -4,7 +4,7 @@ import dark from "./dark";
 
 const SYSTEM_THEME = ["dark", "light"] as const;
 
-type SystemTheme = (typeof SYSTEM_THEME)[number];
+export type SystemTheme = (typeof SYSTEM_THEME)[number];
 
 const colors: Record<SystemTheme, typeof dark> = {
   light,

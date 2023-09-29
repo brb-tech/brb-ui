@@ -7,11 +7,18 @@ import defaultTheme from "./theme";
 import ResetCSS from "./reset-css";
 // import { IThemeMode } from "../types";
 import { ProviderProps } from "./types";
+import useThemeModeSync from "./use-theme-mode-sync";
 
 export const Context = createContext<ProviderProps>({});
 
-const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({ children, theme, prefixCls = "brb" }) => {
-  // const { themeMode, setThemeModeMiddleware } = useThemeModeSync(hardThemeMode, themeCookie, prefixCls);
+const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
+  children,
+  theme,
+  initialThemeMode,
+  useSystemThemeMode,
+  prefixCls = "brb"
+}) => {
+  const { themeMode, setThemeModeMiddleware } = useThemeModeSync(prefixCls, initialThemeMode);
 
   // const emit = useCallback(({ key, newValue }: StorageEvent) => {
   //   switch (key) {
@@ -46,6 +53,10 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({ children,
     </EmotionThemeProvider>
     // </Context.Provider>
   );
+};
+
+Provider.defaultProps = {
+  initialThemeMode: "system"
 };
 
 export default Provider;

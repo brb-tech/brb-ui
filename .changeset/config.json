@@ -10,5 +10,10 @@
   "___experimentalUnsafeOptions_WILL_CHANGE_IN_PATCH": {
     "onlyUpdatePeerDependentsWhenOutOfRange": true
   },
-  "ignore": ["@brb-ui/jest"]
+  "ignore": [
+    "@brb-ui/jest",
+    "@brb-ui/nextjs-app-router-example",
+    "@brb-ui/nextjs-pages-router-example",
+    "@brb-ui/create-react-app-example"
+  ]
 }

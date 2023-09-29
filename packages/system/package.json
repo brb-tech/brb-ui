@@ -38,7 +38,9 @@
   "dependencies": {
     "lodash.merge": "^4.6.2",
     "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0"
+    "@emotion/styled": "^11.11.0",
+    "@brb-ui/hooks": "workspace:*",
+    "@brb-ui/utils": "workspace:*"
   },
   "devDependencies": {
     "@types/lodash.merge": "^4.6.7",
