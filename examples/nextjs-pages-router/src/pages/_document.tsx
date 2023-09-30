@@ -1,5 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
-import { ThemeScript } from "@brb-ui/core";
+import { ThemeModeScript } from "@brb-ui/core";
 
 export default class Document extends NextDocument {
   static getInitialProps(ctx: DocumentContext) {
@@ -11,7 +11,7 @@ export default class Document extends NextDocument {
       <Html>
         <Head />
         <body>
-          <ThemeScript initialThemeMode="system" useSystemThemeMode prefixCls="brb" themeModeKey="theme" />
+          <ThemeModeScript initialThemeMode="system" useSystemThemeMode prefixCls="brb" themeModeKey="theme" />
           <Main />
           <NextScript />
         </body>

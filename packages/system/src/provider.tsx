@@ -7,18 +7,56 @@ import defaultTheme from "./theme";
 import ResetCSS from "./reset-css";
 // import { IThemeMode } from "../types";
 import { ProviderProps } from "./types";
-import useThemeModeSync from "./use-theme-mode-sync";
+import { useLocalStorage, useSafeLayoutEffect } from "@brb-ui/hooks";
+import { Theme } from ".";
 
 export const Context = createContext<ProviderProps>({});
 
 const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   children,
-  theme,
+  prefixCls,
   initialThemeMode,
   useSystemThemeMode,
-  prefixCls = "brb"
+  themeModeKey,
+  theme,
+  supportedThemes,
+  ...rest
 }) => {
-  const { themeMode, setThemeModeMiddleware } = useThemeModeSync(prefixCls, initialThemeMode);
+  if ("cookies" in rest) {
+    console.log("cookies");
+  }
+  const [themeMode, setThemeMode, removeThemeMode] = useLocalStorage<Theme["themeMode"]>(themeModeKey!, "dark");
+
+  // console.log(themeMode);
+  const setThemeModeMiddleware = useCallback(
+    (_theme: Theme["themeMode"]) => {
+      if (initialThemeMode) return;
+      try {
+        setThemeMode(_theme);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+    [initialThemeMode]
+  );
+
+  // useSafeLayoutEffect(() => {
+
+  //   if(initialThemeMode){
+
+  //   }
+  //   if (initialThemeMode && themeMode && initialThemeMode !== themeMode) {
+  //     setThemeMode(initialThemeMode);
+  //   }
+  // }, [initialThemeMode, themeMode]);
+
+  useSafeLayoutEffect(() => {
+    if (themeMode) {
+      document.body.className = `${prefixCls}-ui-${themeMode}`;
+      document.documentElement.style.setProperty(`--${prefixCls}-ui-color-mode`, themeMode);
+    }
+    return () => {};
+  }, [themeMode, prefixCls]);
 
   // const emit = useCallback(({ key, newValue }: StorageEvent) => {
   //   switch (key) {
@@ -39,11 +77,11 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   // }, []);
 
   const themeObject = useMemo(() => {
-    const pre = defaultTheme();
-    const next = theme ? theme() : {};
+    const pre = defaultTheme(themeMode, supportedThemes, prefixCls);
+    const next = theme ? theme(themeMode, supportedThemes, prefixCls) : {};
 
     return merge(pre, next);
-  }, []);
+  }, [prefixCls, theme, themeMode, supportedThemes]);
 
   return (
     // <Context.Provider value={{ themeMode, setThemeMode: setThemeModeMiddleware, hardThemeMode, themeCookie }}>
@@ -56,7 +94,9 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
 };
 
 Provider.defaultProps = {
-  initialThemeMode: "system"
+  initialThemeMode: "system",
+  themeModeKey: "brb-ui-theme-mode",
+  prefixCls: "brb"
 };
 
 export default Provider;

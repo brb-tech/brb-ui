@@ -2,18 +2,22 @@ import zIndices from "./zIndices";
 import light from "./light";
 import dark from "./dark";
 
-const SYSTEM_THEME = ["dark", "light"] as const;
+const SUPPORTED_THEME_MODES = ["dark", "light"] as const;
 
-export type SystemTheme = (typeof SYSTEM_THEME)[number];
+export type SupportedThemeMode = (typeof SUPPORTED_THEME_MODES)[number];
 
-const colors: Record<SystemTheme, typeof dark> = {
+const colors: Record<SupportedThemeMode, typeof dark> = {
   light,
   dark
 };
 
-const defaultTheme = <T extends SystemTheme>(theme = "dark" as T, systemTheme = SYSTEM_THEME, prefixCls = "brb") => ({
-  systemTheme,
-  theme,
+const defaultTheme = <T extends SupportedThemeMode>(
+  themeMode = "dark" as T,
+  supportedThemes = SUPPORTED_THEME_MODES,
+  prefixCls = "brb"
+) => ({
+  themeMode,
+  supportedThemes,
   prefixCls,
   family: "Inter,sans-serif",
   system: {
@@ -21,7 +25,7 @@ const defaultTheme = <T extends SystemTheme>(theme = "dark" as T, systemTheme = 
     black: "#000",
     transparent: "transparent",
     inherit: "inherit",
-    ...colors[theme]
+    ...colors[themeMode]
   },
   zIndices
 });
