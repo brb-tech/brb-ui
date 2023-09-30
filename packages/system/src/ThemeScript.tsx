@@ -18,11 +18,12 @@ export const ThemeScript: React.FC<
                   themeMode = 'light';
                 }
               }else{
-                themeMode = localStorage.getItem(${themeModeKey}) || ${initialThemeMode};
+                themeMode = localStorage.getItem('${themeModeKey}') || ${initialThemeMode};
               }
 
               if(themeMode){
-                document.body.classList.add(${prefixCls}-ui-)
+                document.body.classList.add('${prefixCls}-ui-' + themeMode);
+                document.documentElement.style.setProperty('--${prefixCls}-ui-mode', themeMode);
               }
               
             } catch(e){}})();
