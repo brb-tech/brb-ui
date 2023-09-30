@@ -14,6 +14,7 @@
     "@brb-ui/jest",
     "@brb-ui/nextjs-app-router-example",
     "@brb-ui/nextjs-pages-router-example",
-    "@brb-ui/create-react-app-example"
+    "@brb-ui/create-react-app-example",
+    "@brb-ui/vite-react-ts-example"
   ]
 }
