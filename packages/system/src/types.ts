@@ -14,15 +14,21 @@ export type CreateStyledProps<Tag extends keyof JSX.IntrinsicElements> = ReturnT
  */
 export type ProviderProps = {
   /**
+   * @description class name prefix.
    * @default brb
    */
   prefixCls?: string;
 
   /**
-   * @description If using system color switching, `initialThemeMode` will not be used
+   * @description Initializing theme mode in uncontrolled mode.
    * @default system
    */
-  initialThemeMode?: Theme["themeMode"] | "system";
+  initialThemeMode?: Theme["themeMode"];
+
+  /**
+   * @description If `themeMode` is used, theme switching becomes controlled mode.
+   */
+  themeMode?: Theme["themeMode"];
 
   /**
    * @default SUPPORTED_THEME_MODES
@@ -33,7 +39,7 @@ export type ProviderProps = {
    * @default import("./theme.ts")
    */
   theme?: (
-    themeMode?: Theme["themeMode"],
+    themeMode?: ProviderProps["themeMode"],
     supportedThemes?: ProviderProps["supportedThemes"],
     prefixCls?: ProviderProps["prefixCls"]
   ) => Theme;
@@ -43,12 +49,6 @@ export type ProviderProps = {
    * @default brb-ui-theme-mode
    */
   themeModeKey?: string;
-
-  /**
-   * @description If using system color switching, `initialThemeMode` will not be used
-   * @default false
-   */
-  useSystemThemeMode?: boolean;
 
   /**
    * @description When you use server-side rendering, you need the value in cookies for persistent rendering.

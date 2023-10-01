@@ -1,14 +1,33 @@
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import merge from "lodash.merge";
-import React, { createContext, Fragment, useCallback } from "react";
+import React, { createContext, useCallback, useState } from "react";
 import { useMemo } from "react";
-// import useSafeLayoutEffect from "../hooks/useSafeLayoutEffect";
 import defaultTheme from "./theme";
 import ResetCSS from "./reset-css";
-// import { IThemeMode } from "../types";
 import { ProviderProps } from "./types";
-import { useLocalStorage, useSafeLayoutEffect } from "@brb-ui/hooks";
+import { useSafeLayoutEffect } from "@brb-ui/hooks";
 import { Theme } from ".";
+import { parse } from "cookie";
+import { isBrowser } from "@brb-ui/utils";
+import { set } from "js-cookie";
+
+export const getThemeModeFromLS = (themeModeKey: string): Theme["themeMode"] | null => {
+  try {
+    const themeModeFromJS = isBrowser ? localStorage.getItem(themeModeKey) : undefined;
+    return (themeModeFromJS ?? null) as Theme["themeMode"] | null;
+  } catch {
+    return null;
+  }
+};
+
+export const getThemeModeFromCookies = (themeModeKey: string, cookies?: string): Theme["themeMode"] | null => {
+  try {
+    const themeModeFromCookie = parse(cookies || "")[themeModeKey];
+    return (themeModeFromCookie ?? null) as Theme["themeMode"] | null;
+  } catch {
+    return null;
+  }
+};
 
 export const Context = createContext<ProviderProps>({});
 
@@ -16,72 +35,70 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   children,
   prefixCls,
   initialThemeMode,
-  useSystemThemeMode,
+  themeMode,
   themeModeKey,
   theme,
   supportedThemes,
   ...rest
 }) => {
-  if ("cookies" in rest) {
-    console.log("cookies");
-  }
-  const [themeMode, setThemeMode, removeThemeMode] = useLocalStorage<Theme["themeMode"]>(themeModeKey!, "dark");
+  const [internalThemeMode, setInternalThemeMode] = useState<Theme["themeMode"]>(
+    "cookies" in rest
+      ? getThemeModeFromCookies(themeModeKey!, rest.cookies) || initialThemeMode!
+      : getThemeModeFromLS(themeModeKey!) || initialThemeMode!
+  );
 
-  // console.log(themeMode);
+  const mergedThemeMode = themeMode || internalThemeMode;
+
   const setThemeModeMiddleware = useCallback(
-    (_theme: Theme["themeMode"]) => {
-      if (initialThemeMode) return;
+    (_themeMode: Theme["themeMode"]) => {
+      if (themeMode) return;
       try {
-        setThemeMode(_theme);
+        setInternalThemeMode(_themeMode);
+        set(themeModeKey!, _themeMode, {
+          expires: Number.MAX_SAFE_INTEGER
+        });
       } catch (e) {
         console.error(e);
       }
     },
-    [initialThemeMode]
+    [themeModeKey, themeMode]
   );
-
-  // useSafeLayoutEffect(() => {
-
-  //   if(initialThemeMode){
-
-  //   }
-  //   if (initialThemeMode && themeMode && initialThemeMode !== themeMode) {
-  //     setThemeMode(initialThemeMode);
-  //   }
-  // }, [initialThemeMode, themeMode]);
 
   useSafeLayoutEffect(() => {
     if (themeMode) {
-      document.body.className = `${prefixCls}-ui-${themeMode}`;
-      document.documentElement.style.setProperty(`--${prefixCls}-ui-color-mode`, themeMode);
+      document.body.className = `${prefixCls}-ui-${mergedThemeMode}`;
+      document.documentElement.style.setProperty(`--${prefixCls}-ui-theme-mode`, mergedThemeMode);
+      document.documentElement.setAttribute("data-theme", mergedThemeMode);
     }
     return () => {};
-  }, [themeMode, prefixCls]);
+  }, [mergedThemeMode, prefixCls]);
 
-  // const emit = useCallback(({ key, newValue }: StorageEvent) => {
-  //   switch (key) {
-  //     case "theme":
-  //       setThemeModeMiddleware(newValue as IThemeMode);
-  //       break;
+  const emit = useCallback(
+    ({ key, newValue }: StorageEvent) => {
+      switch (key) {
+        case themeModeKey:
+          setThemeModeMiddleware(newValue as Theme["themeMode"]);
+          break;
+        default:
+          break;
+      }
+    },
+    [themeModeKey]
+  );
 
-  //     default:
-  //       break;
-  //   }
-  // }, []);
-
-  // useSafeLayoutEffect(() => {
-  //   window.addEventListener("storage", emit);
-  //   return () => {
-  //     window.removeEventListener("storage", emit);
-  //   };
-  // }, []);
+  useSafeLayoutEffect(() => {
+    window.addEventListener("storage", emit);
+    return () => {
+      window.removeEventListener("storage", emit);
+    };
+  }, [emit]);
 
   const themeObject = useMemo(() => {
-    const pre = defaultTheme(themeMode, supportedThemes, prefixCls);
-    const next = theme ? theme(themeMode, supportedThemes, prefixCls) : {};
+    const pre = defaultTheme(mergedThemeMode, supportedThemes, prefixCls);
+    const next = theme ? theme(mergedThemeMode, supportedThemes, prefixCls) : {};
 
     return merge(pre, next);
-  }, [prefixCls, theme, themeMode, supportedThemes]);
+  }, [prefixCls, theme, mergedThemeMode, supportedThemes]);
 
   return (
     // <Context.Provider value={{ themeMode, setThemeMode: setThemeModeMiddleware, hardThemeMode, themeCookie }}>
@@ -94,7 +111,7 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
 };
 
 Provider.defaultProps = {
-  initialThemeMode: "system",
+  initialThemeMode: "dark",
   themeModeKey: "brb-ui-theme-mode",
   prefixCls: "brb"
 };
