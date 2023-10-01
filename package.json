@@ -14,6 +14,8 @@
     "build:packages": "turbo run build --filter=./packages/*",
     "dev:storybook": "turbo run dev --filter=@brb-ui/storybook...",
     "build:storybook": "turbo run build --filter=@brb-ui/storybook...",
+    "dev:website": "turbo run build --filter=@brb-ui/website...",
+    "build:website": "turbo run build --filter=@brb-ui/website...",
     "test": "jest",
     "lint": "eslint packages/**/src tools/**/src --ext .ts,.tsx --config .eslintrc --cache",
     "format:write": "prettier --write packages/**/src tools/**/src --cache",
