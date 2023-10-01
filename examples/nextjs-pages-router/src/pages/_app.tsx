@@ -1,11 +1,16 @@
-import { Provider } from "@brb-ui/system";
+import { Provider, styled } from "@brb-ui/core";
 import type { AppContext, AppProps } from "next/app";
 import App from "next/app";
 
+const Header = styled.header`
+  height: 64px;
+  border-bottom: 1px solid ${({ theme }) => theme.system.blueGray[3]};
+`;
+
 export default function _APP({ Component, pageProps, cookies, ...rest }: AppProps & { cookies?: string }) {
-  console.log(rest);
   return (
     <Provider cookies={cookies}>
+      <Header css={{ color: "red" }}></Header>
       <Component {...pageProps} />
     </Provider>
   );

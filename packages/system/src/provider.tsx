@@ -1,10 +1,10 @@
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react";
 import merge from "lodash.merge";
-import React, { createContext, useCallback, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import { useMemo } from "react";
-import defaultTheme from "./theme";
+import defaultTheme, { SUPPORTED_THEME_MODES } from "./theme";
 import ResetCSS from "./reset-css";
-import { ProviderProps } from "./types";
+import { ProviderProps, SystemType } from "./types";
 import { useSafeLayoutEffect } from "@brb-ui/hooks";
 import { Theme } from ".";
 import { parse } from "cookie";
@@ -29,16 +29,21 @@ export const getThemeModeFromCookies = (themeModeKey: string, cookies?: string):
   }
 };
 
-export const Context = createContext<ProviderProps>({});
+export const SystemContext = createContext<SystemType>({
+  themeMode: "dark",
+  supportedThemes: SUPPORTED_THEME_MODES
+});
+
+export const useSystem = () => useContext(SystemContext);
 
 const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   children,
-  prefixCls,
-  initialThemeMode,
+  prefixCls = "brb",
+  initialThemeMode = "dark",
   themeMode,
-  themeModeKey,
+  themeModeKey = "brb-ui-theme-mode",
   theme,
-  supportedThemes,
+  supportedThemes = SUPPORTED_THEME_MODES,
   ...rest
 }) => {
   const [internalThemeMode, setInternalThemeMode] = useState<Theme["themeMode"]>(
@@ -65,7 +70,7 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   );
 
   useSafeLayoutEffect(() => {
-    if (themeMode) {
+    if (mergedThemeMode) {
       document.body.className = `${prefixCls}-ui-${mergedThemeMode}`;
       document.documentElement.style.setProperty(`--${prefixCls}-ui-theme-mode`, mergedThemeMode);
       document.documentElement.setAttribute("data-theme", mergedThemeMode);
@@ -101,19 +106,15 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   }, [prefixCls, theme, mergedThemeMode, supportedThemes]);
 
   return (
-    // <Context.Provider value={{ themeMode, setThemeMode: setThemeModeMiddleware, hardThemeMode, themeCookie }}>
-    <EmotionThemeProvider theme={themeObject}>
-      <ResetCSS />
-      {children}
-    </EmotionThemeProvider>
-    // </Context.Provider>
+    <SystemContext.Provider
+      value={{ themeMode: mergedThemeMode, supportedThemes: supportedThemes!, setThemeMode: setThemeModeMiddleware }}
+    >
+      <EmotionThemeProvider theme={themeObject}>
+        <ResetCSS />
+        {children}
+      </EmotionThemeProvider>
+    </SystemContext.Provider>
   );
-};
-
-Provider.defaultProps = {
-  initialThemeMode: "dark",
-  themeModeKey: "brb-ui-theme-mode",
-  prefixCls: "brb"
 };
 
 export default Provider;

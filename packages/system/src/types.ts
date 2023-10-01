@@ -1,5 +1,4 @@
 import { CreateStyled } from "@emotion/styled";
-import type { DefaultThemeParameters } from "./theme";
 import { Theme } from ".";
 
 /**
@@ -55,3 +54,7 @@ export type ProviderProps = {
    */
   cookies?: string;
 };
+
+export interface SystemType extends Required<Pick<ProviderProps, "themeMode" | "supportedThemes">> {
+  setThemeMode?: (_themeMode: Theme["themeMode"]) => void;
+}

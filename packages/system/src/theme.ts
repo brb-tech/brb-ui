@@ -2,7 +2,7 @@ import zIndices from "./zIndices";
 import light from "./light";
 import dark from "./dark";
 
-const SUPPORTED_THEME_MODES = ["dark", "light"] as const;
+export const SUPPORTED_THEME_MODES = ["dark", "light"] as const;
 
 export type SupportedThemeMode = (typeof SUPPORTED_THEME_MODES)[number];
 
@@ -25,7 +25,7 @@ const defaultTheme = <T extends SupportedThemeMode>(
     black: "#000",
     transparent: "transparent",
     inherit: "inherit",
-    ...colors[themeMode]
+    ...(colors[themeMode] ? colors[themeMode] : colors["dark"])
   },
   zIndices
 });
