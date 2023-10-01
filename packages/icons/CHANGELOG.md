@@ -1,5 +1,13 @@
 # @brb-ui/icons
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [[`5060639`](https://github.com/brb-tech/brb-ui/commit/5060639354242d423d8819efd86eb8606167158e)]:
+  - @brb-ui/system@0.0.8
+  - @brb-ui/icon@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
