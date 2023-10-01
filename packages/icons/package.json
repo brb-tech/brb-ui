@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/icons",
   "description": "BRB UI Icons",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "src/index.ts",
   "files": [

@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/system",
   "description": "BRB UI Design System",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "src/index.ts",
   "files": [

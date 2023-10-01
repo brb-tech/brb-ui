@@ -1,5 +1,11 @@
 # @brb-ui/system
 
+## 0.0.8
+
+### Patch Changes
+
+- [`5060639`](https://github.com/brb-tech/brb-ui/commit/5060639354242d423d8819efd86eb8606167158e) Thanks [@0xhipp0](https://github.com/0xhipp0)! - Update system theme mode
+
 ## 0.0.7
 
 ### Patch Changes
