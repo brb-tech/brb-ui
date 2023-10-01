@@ -12,9 +12,8 @@
     "dev": "turbo run dev --filter=!./examples/*",
     "build": "turbo run build --filter=!./examples/*",
     "build:packages": "turbo run build --filter=./packages/*",
-    "dev:storybook": "storybook dev -p 8000",
-    "build:storybook": "storybook build -o build",
-    "serve:storybook": "pnpx serve build",
+    "dev:storybook": "turbo run dev --filter=@brb-ui/storybook...",
+    "build:storybook": "turbo run build --filter=@brb-ui/storybook...",
     "test": "jest",
     "lint": "eslint packages/**/src tools/**/src --ext .ts,.tsx --config .eslintrc --cache",
     "format:write": "prettier --write packages/**/src tools/**/src --cache",
@@ -28,14 +27,10 @@
     "release:dev": "changeset publish --tag dev"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.10",
-    "@babel/preset-react": "^7.22.5",
-    "@babel/preset-typescript": "^7.22.5",
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
-    "@emotion/babel-preset-css-prop": "^11.11.0",
     "@emotion/jest": "^11.11.0",
     "@swc/core": "^1.3.90",
     "@swc/jest": "^0.2.29",
@@ -64,24 +59,10 @@
     "@brb-ui/jest": "workspace:*"
   },
   "dependencies": {
-    "@brb-ui/system": "workspace:^",
-    "@fontsource/inter": "^5.0.8",
-    "@storybook/addon-a11y": "^7.4.5",
-    "@storybook/addon-essentials": "^7.4.5",
-    "@storybook/addon-interactions": "^7.4.5",
-    "@storybook/addon-links": "^7.4.5",
-    "@storybook/addon-storysource": "^7.4.5",
-    "@storybook/addons": "^7.4.5",
-    "@storybook/blocks": "^7.4.5",
-    "@storybook/react": "^7.4.5",
-    "@storybook/react-webpack5": "^7.4.5",
-    "@storybook/testing-library": "^0.2.1",
-    "@storybook/theming": "^7.4.5",
-    "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.4.5",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "@brb-ui/system": "workspace:*"
   },
   "engines": {
     "node": ">=18.0.0"

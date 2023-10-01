@@ -4,7 +4,7 @@ import { createRequire } from "node:module";
 const require = createRequire(import.meta.url);
 
 const config: StorybookConfig = {
-  stories: ["../packages/**/*.stories.mdx", "../packages/**/*.stories.@(js|jsx|ts|tsx)"],
+  stories: ["../../../packages/**/*.stories.mdx", "../../../packages/**/*.stories.@(js|jsx|ts|tsx)"],
 
   addons: [
     "@storybook/addon-links",

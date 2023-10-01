@@ -11,6 +11,7 @@
     "onlyUpdatePeerDependentsWhenOutOfRange": true
   },
   "ignore": [
+    "@brb-ui/storybook",
     "@brb-ui/jest",
     "@brb-ui/nextjs-app-router-example",
     "@brb-ui/nextjs-pages-router-example",
