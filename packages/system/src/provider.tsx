@@ -9,7 +9,7 @@ import { useSafeLayoutEffect } from "@brb-ui/hooks";
 import { Theme } from ".";
 import { parse } from "cookie";
 import { isBrowser } from "@brb-ui/utils";
-import { set } from "js-cookie";
+import jscookie from "js-cookie";
 
 export const getThemeModeFromLS = (themeModeKey: string): Theme["themeMode"] | null => {
   try {
@@ -31,12 +31,13 @@ export const getThemeModeFromCookies = (themeModeKey: string, cookies?: string):
 
 export const SystemContext = createContext<SystemType>({
   themeMode: "dark",
-  supportedThemes: SUPPORTED_THEME_MODES
+  supportedThemes: SUPPORTED_THEME_MODES,
+  setThemeMode: () => {}
 });
 
 export const useSystem = () => useContext(SystemContext);
 
-const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
+export const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
   children,
   prefixCls = "brb",
   initialThemeMode = "dark",
@@ -59,8 +60,9 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
       if (themeMode) return;
       try {
         setInternalThemeMode(_themeMode);
-        set(themeModeKey!, _themeMode, {
-          expires: Number.MAX_SAFE_INTEGER
+        localStorage.setItem(themeModeKey!, _themeMode);
+        jscookie.set(themeModeKey!, _themeMode, {
+          expires: 60 * 60 * 24 * 365
         });
       } catch (e) {
         console.error(e);
@@ -68,6 +70,8 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
     },
     [themeModeKey, themeMode]
   );
+
+  console.log(mergedThemeMode);
 
   useSafeLayoutEffect(() => {
     if (mergedThemeMode) {
@@ -116,5 +120,3 @@ const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
     </SystemContext.Provider>
   );
 };
-
-export default Provider;

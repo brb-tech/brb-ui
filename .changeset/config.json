@@ -12,6 +12,7 @@
   },
   "ignore": [
     "@brb-ui/storybook",
+    "@brb-ui/website",
     "@brb-ui/jest",
     "@brb-ui/nextjs-app-router-example",
     "@brb-ui/nextjs-pages-router-example",

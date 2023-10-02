@@ -56,5 +56,5 @@ export type ProviderProps = {
 };
 
 export interface SystemType extends Required<Pick<ProviderProps, "themeMode" | "supportedThemes">> {
-  setThemeMode?: (_themeMode: Theme["themeMode"]) => void;
+  setThemeMode: (_themeMode: Theme["themeMode"]) => void;
 }

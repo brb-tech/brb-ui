@@ -19,18 +19,18 @@ jobs:
       - name: Build packages
         run: pnpm build
 
-  # tests:
-  #   name: Tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout branch
-  #       uses: actions/checkout@v3
+  tests:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v3
 
-  #     - name: Install
-  #       uses: ./.github/install
+      - name: Install
+        uses: ./.github/install
 
-  #     - name: Run tests
-  #       run: pnpm test
+      - name: Run tests
+        run: pnpm test
 
   eslint:
     name: ESLint
