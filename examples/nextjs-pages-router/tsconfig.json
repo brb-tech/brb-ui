@@ -12,7 +12,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "jsxImportSource": "@brb-ui/core",
+    "jsxImportSource": "@brb-ui/system",
     "incremental": true,
     "baseUrl": "src"
   },
