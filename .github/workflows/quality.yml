@@ -3,7 +3,7 @@ name: Quality
 on:
   push:
     branches:
-      - main
+      - "**"
 
 jobs:
   build:

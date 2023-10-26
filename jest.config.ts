@@ -1,8 +1,10 @@
-/** @type {import('jest').Config} */
-module.exports = {
+import { Config } from "jest";
+
+const config: Config = {
   testEnvironment: "jsdom",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
   collectCoverageFrom: ["packages/**/*.{ts,tsx}"],
+  collectCoverage: true,
   transformIgnorePatterns: ["/node_modules/"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)?$": "@swc/jest"
@@ -15,3 +17,5 @@ module.exports = {
     }
   }
 };
+
+export default config;
