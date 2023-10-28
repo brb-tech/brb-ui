@@ -1,0 +1,795 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correct with attributes: data-scheme 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #318BF5;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #0B71EA;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #539EF7;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #07448C;
+  color: #12233A;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    primary
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-scheme 2`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #F7B545;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #F5A113;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #F9C164;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #986206;
+  color: #2F2A20;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="warn"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    warn
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-scheme 3`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #31353D;
+  color: #F4F4F5;
+}
+
+.emotion-0:hover {
+  background: #1B1E24;
+  color: #F4F4F5;
+}
+
+.emotion-0:active {
+  background: #3D424D;
+  color: #F4F4F5;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #1B1E24;
+  color: #414447;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="default"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    default
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-scheme 4`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #DC4B55;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #CE2833;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #E26971;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #7B181F;
+  color: #2B1A22;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="danger"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    danger
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-scheme 5`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #06B196;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #05947D;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #00D6B4;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #03594B;
+  color: #092420;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="info"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    info
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-variant 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #318BF5;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #0B71EA;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #539EF7;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #07448C;
+  color: #12233A;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-testid="btn"
+    data-variant="contained"
+    type="button"
+  >
+    contained
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-variant 2`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  border-color: #318BF5;
+  color: #318BF5;
+}
+
+.emotion-0:hover {
+  border-color: #0B71EA;
+  color: #0B71EA;
+  background: #1B1E24;
+}
+
+.emotion-0:active {
+  border-color: #539EF7;
+  color: #539EF7;
+  background: #31353D;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  border-color: #07448C;
+  background: #141619;
+  color: #07448C;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-testid="btn"
+    data-variant="outlined"
+    type="button"
+  >
+    outlined
+  </button>
+</div>
+`;
+
+exports[`renders correct with attributes: data-variant 3`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  color: #318BF5;
+}
+
+.emotion-0:hover {
+  color: #0B71EA;
+}
+
+.emotion-0:active {
+  color: #539EF7;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  color: #07448C;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-testid="btn"
+    data-variant="text"
+    type="button"
+  >
+    outlined
+  </button>
+</div>
+`;
+
+exports[`renders correct with icon in props 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #318BF5;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #0B71EA;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #539EF7;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #07448C;
+  color: #12233A;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: inherit;
+  -webkit-margin-start: 6px;
+  margin-inline-start: 6px;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-variant="contained"
+    type="button"
+  >
+    Loading
+    <span
+      class="brb-icon emotion-1"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders correct with icon no children 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 40px;
+  background: #318BF5;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #0B71EA;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #539EF7;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #07448C;
+  color: #12233A;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: inherit;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-variant="contained"
+    type="button"
+  >
+    <span
+      class="brb-icon emotion-1"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 16 16"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;
+
+exports[`renders correct with loading 1`] = `
+@keyframes animation-0 {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  border: 1px solid;
+  border-color: transparent;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  padding-inline: 12px;
+  background: #318BF5;
+  color: #FFF;
+}
+
+.emotion-0:hover {
+  background: #0B71EA;
+  color: #FFF;
+}
+
+.emotion-0:active {
+  background: #539EF7;
+  color: #FFF;
+}
+
+.emotion-0:not([loading])[disabled] {
+  cursor: not-allowed;
+}
+
+.emotion-0[disabled],
+.emotion-0[loading] {
+  background: #07448C;
+  color: #12233A;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  font-size: inherit;
+  -webkit-animation-name: animation-0;
+  animation-name: animation-0;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-margin-start: 6px;
+  margin-inline-start: 6px;
+}
+
+<div>
+  <button
+    class="brb-button emotion-0"
+    data-scheme="primary"
+    data-testid="btn"
+    data-variant="contained"
+    disabled=""
+    loading=""
+    type="button"
+  >
+    Loading
+    <span
+      class="brb-icon emotion-1"
+    >
+      <svg
+        aria-hidden="true"
+        fill="currentColor"
+        height="1em"
+        viewBox="0 0 1024 1024"
+        width="1em"
+      >
+        <path
+          d="M988 548c-19.9 0-36-16.1-36-36 0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 0 0-94.3-139.9 437.71 437.71 0 0 0-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.3C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7 26.7 63.1 40.2 130.2 40.2 199.3.1 19.9-16 36-35.9 36z"
+        />
+      </svg>
+    </span>
+  </button>
+</div>
+`;

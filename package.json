@@ -18,6 +18,7 @@
     "build:website": "turbo run build --filter=@brb-ui/website...",
     "dev:examples": "turbo run dev --filter=./examples/*",
     "test": "jest",
+    "test:update": "jest -u",
     "lint": "eslint packages/**/src tools/**/src --ext .ts,.tsx --config .eslintrc --cache",
     "format:write": "prettier --write packages/**/src tools/**/src --cache",
     "format:check": "prettier --check packages/**/src tools/**/src --cache",

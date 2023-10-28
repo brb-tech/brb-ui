@@ -71,8 +71,6 @@ export const Provider: React.FC<ProviderProps & React.PropsWithChildren> = ({
     [themeModeKey, themeMode]
   );
 
-  console.log(mergedThemeMode);
-
   useSafeLayoutEffect(() => {
     if (mergedThemeMode) {
       document.body.className = `${prefixCls}-ui-${mergedThemeMode}`;
