@@ -10,7 +10,7 @@
     "clean": "rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf build && rm -rf node_modules"
   },
   "dependencies": {
-    "next": "13.4.19",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0"

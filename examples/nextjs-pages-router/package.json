@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@brb-ui/core": "workspace:*",
-    "next": "13.4.19",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.11.0"
