@@ -64,34 +64,34 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
       case "default":
         if (variant === "contained") {
           return {
-            background: theme.system.blueGray[3],
-            color: theme.system.gray[11]
+            background: theme.colors.blueGray[3],
+            color: theme.colors.gray[11]
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.blueGray[4],
-            color: theme.system.gray[11]
+            borderColor: theme.colors.blueGray[4],
+            color: theme.colors.gray[11]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.gray[11]
+            color: theme.colors.gray[11]
           };
         }
         break;
       case "primary":
         if (variant === "contained") {
           return {
-            background: theme.system.primary[6],
-            color: theme.system.white
+            background: theme.colors.primary[6],
+            color: theme.colors.white
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.primary[6],
-            color: theme.system.primary[6]
+            borderColor: theme.colors.primary[6],
+            color: theme.colors.primary[6]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.primary[6]
+            color: theme.colors.primary[6]
           };
         }
         break;
@@ -99,17 +99,17 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
       case "info":
         if (variant === "contained") {
           return {
-            background: theme.system.green[6],
-            color: theme.system.white
+            background: theme.colors.green[6],
+            color: theme.colors.white
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.green[6],
-            color: theme.system.green[6]
+            borderColor: theme.colors.green[6],
+            color: theme.colors.green[6]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.green[6]
+            color: theme.colors.green[6]
           };
         }
         break;
@@ -117,34 +117,34 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
       case "danger":
         if (variant === "contained") {
           return {
-            background: theme.system.red[6],
-            color: theme.system.white
+            background: theme.colors.red[6],
+            color: theme.colors.white
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.red[6],
-            color: theme.system.red[6]
+            borderColor: theme.colors.red[6],
+            color: theme.colors.red[6]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.red[6]
+            color: theme.colors.red[6]
           };
         }
         break;
       case "warn":
         if (variant === "contained") {
           return {
-            background: theme.system.yellow[6],
-            color: theme.system.white
+            background: theme.colors.yellow[6],
+            color: theme.colors.white
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.yellow[6],
-            color: theme.system.yellow[6]
+            borderColor: theme.colors.yellow[6],
+            color: theme.colors.yellow[6]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.yellow[6]
+            color: theme.colors.yellow[6]
           };
         }
         break;
@@ -152,17 +152,17 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
       default:
         if (variant === "contained") {
           return {
-            background: theme.system.blueGray[3],
-            color: theme.system.gray[11]
+            background: theme.colors.blueGray[3],
+            color: theme.colors.gray[11]
           };
         } else if (variant === "outlined") {
           return {
-            borderColor: theme.system.blueGray[4],
-            color: theme.system.gray[11]
+            borderColor: theme.colors.blueGray[4],
+            color: theme.colors.gray[11]
           };
         } else if (variant === "text") {
           return {
-            color: theme.system.gray[11]
+            color: theme.colors.gray[11]
           };
         }
     }
@@ -174,18 +174,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "default":
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[2],
-              color: theme.system.gray[11]
+              background: theme.colors.blueGray[2],
+              color: theme.colors.gray[11]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[4],
-              color: theme.system.gray[11],
-              background: theme.system.blueGray[2]
+              borderColor: theme.colors.blueGray[4],
+              color: theme.colors.gray[11],
+              background: theme.colors.blueGray[2]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[9]
+              color: theme.colors.gray[9]
             };
           }
           break;
@@ -193,18 +193,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "primary":
           if (variant === "contained") {
             return {
-              background: theme.system.primary[5],
-              color: theme.system.white
+              background: theme.colors.primary[5],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.primary[5],
-              color: theme.system.primary[5],
-              background: theme.system.blueGray[2]
+              borderColor: theme.colors.primary[5],
+              color: theme.colors.primary[5],
+              background: theme.colors.blueGray[2]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.primary[5]
+              color: theme.colors.primary[5]
             };
           }
           break;
@@ -212,18 +212,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "info":
           if (variant === "contained") {
             return {
-              background: theme.system.green[5],
-              color: theme.system.white
+              background: theme.colors.green[5],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.green[5],
-              background: theme.system.blueGray[2],
-              color: theme.system.green[5]
+              borderColor: theme.colors.green[5],
+              background: theme.colors.blueGray[2],
+              color: theme.colors.green[5]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.green[5]
+              color: theme.colors.green[5]
             };
           }
           break;
@@ -231,18 +231,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "danger":
           if (variant === "contained") {
             return {
-              background: theme.system.red[5],
-              color: theme.system.white
+              background: theme.colors.red[5],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.red[5],
-              background: theme.system.blueGray[2],
-              color: theme.system.red[5]
+              borderColor: theme.colors.red[5],
+              background: theme.colors.blueGray[2],
+              color: theme.colors.red[5]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.red[5]
+              color: theme.colors.red[5]
             };
           }
           break;
@@ -250,18 +250,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "warn":
           if (variant === "contained") {
             return {
-              background: theme.system.yellow[5],
-              color: theme.system.white
+              background: theme.colors.yellow[5],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.yellow[5],
-              background: theme.system.blueGray[2],
-              color: theme.system.yellow[5]
+              borderColor: theme.colors.yellow[5],
+              background: theme.colors.blueGray[2],
+              color: theme.colors.yellow[5]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.yellow[5]
+              color: theme.colors.yellow[5]
             };
           }
           break;
@@ -269,18 +269,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         default:
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[2],
-              color: theme.system.gray[11]
+              background: theme.colors.blueGray[2],
+              color: theme.colors.gray[11]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[4],
-              color: theme.system.gray[11],
-              background: theme.system.blueGray[2]
+              borderColor: theme.colors.blueGray[4],
+              color: theme.colors.gray[11],
+              background: theme.colors.blueGray[2]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[9]
+              color: theme.colors.gray[9]
             };
           }
       }
@@ -293,18 +293,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "default":
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[4],
-              color: theme.system.gray[11]
+              background: theme.colors.blueGray[4],
+              color: theme.colors.gray[11]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[4],
-              color: theme.system.gray[11],
-              background: theme.system.blueGray[3]
+              borderColor: theme.colors.blueGray[4],
+              color: theme.colors.gray[11],
+              background: theme.colors.blueGray[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[11]
+              color: theme.colors.gray[11]
             };
           }
           break;
@@ -312,18 +312,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "primary":
           if (variant === "contained") {
             return {
-              background: theme.system.primary[7],
-              color: theme.system.white
+              background: theme.colors.primary[7],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.primary[7],
-              color: theme.system.primary[7],
-              background: theme.system.blueGray[3]
+              borderColor: theme.colors.primary[7],
+              color: theme.colors.primary[7],
+              background: theme.colors.blueGray[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.primary[7]
+              color: theme.colors.primary[7]
             };
           }
           break;
@@ -331,18 +331,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "info":
           if (variant === "contained") {
             return {
-              background: theme.system.green[7],
-              color: theme.system.white
+              background: theme.colors.green[7],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.green[7],
-              background: theme.system.blueGray[3],
-              color: theme.system.green[7]
+              borderColor: theme.colors.green[7],
+              background: theme.colors.blueGray[3],
+              color: theme.colors.green[7]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.green[7]
+              color: theme.colors.green[7]
             };
           }
           break;
@@ -350,18 +350,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "danger":
           if (variant === "contained") {
             return {
-              background: theme.system.red[7],
-              color: theme.system.white
+              background: theme.colors.red[7],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.red[7],
-              background: theme.system.blueGray[3],
-              color: theme.system.red[7]
+              borderColor: theme.colors.red[7],
+              background: theme.colors.blueGray[3],
+              color: theme.colors.red[7]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.red[7]
+              color: theme.colors.red[7]
             };
           }
           break;
@@ -369,18 +369,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "warn":
           if (variant === "contained") {
             return {
-              background: theme.system.yellow[7],
-              color: theme.system.white
+              background: theme.colors.yellow[7],
+              color: theme.colors.white
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.yellow[7],
-              background: theme.system.blueGray[3],
-              color: theme.system.yellow[7]
+              borderColor: theme.colors.yellow[7],
+              background: theme.colors.blueGray[3],
+              color: theme.colors.yellow[7]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.yellow[7]
+              color: theme.colors.yellow[7]
             };
           }
           break;
@@ -388,18 +388,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         default:
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[4],
-              color: theme.system.gray[11]
+              background: theme.colors.blueGray[4],
+              color: theme.colors.gray[11]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[4],
-              color: theme.system.gray[11],
-              background: theme.system.blueGray[3]
+              borderColor: theme.colors.blueGray[4],
+              color: theme.colors.gray[11],
+              background: theme.colors.blueGray[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[11]
+              color: theme.colors.gray[11]
             };
           }
       }
@@ -416,18 +416,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "default":
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[2],
-              color: theme.system.gray[5]
+              background: theme.colors.blueGray[2],
+              color: theme.colors.gray[5]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[3],
-              color: theme.system.gray[5],
-              background: theme.system.blueGray[1]
+              borderColor: theme.colors.blueGray[3],
+              color: theme.colors.gray[5],
+              background: theme.colors.blueGray[1]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[5]
+              color: theme.colors.gray[5]
             };
           }
           break;
@@ -435,18 +435,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "primary":
           if (variant === "contained") {
             return {
-              background: theme.system.primary[3],
-              color: theme.system.primary[1]
+              background: theme.colors.primary[3],
+              color: theme.colors.primary[1]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.primary[3],
-              background: theme.system.blueGray[1],
-              color: theme.system.primary[3]
+              borderColor: theme.colors.primary[3],
+              background: theme.colors.blueGray[1],
+              color: theme.colors.primary[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.primary[3]
+              color: theme.colors.primary[3]
             };
           }
           break;
@@ -454,18 +454,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "info":
           if (variant === "contained") {
             return {
-              background: theme.system.green[3],
-              color: theme.system.green[1]
+              background: theme.colors.green[3],
+              color: theme.colors.green[1]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.green[3],
-              background: theme.system.blueGray[1],
-              color: theme.system.green[3]
+              borderColor: theme.colors.green[3],
+              background: theme.colors.blueGray[1],
+              color: theme.colors.green[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.green[3]
+              color: theme.colors.green[3]
             };
           }
           break;
@@ -473,18 +473,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "danger":
           if (variant === "contained") {
             return {
-              background: theme.system.red[3],
-              color: theme.system.red[1]
+              background: theme.colors.red[3],
+              color: theme.colors.red[1]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.red[3],
-              background: theme.system.blueGray[1],
-              color: theme.system.red[3]
+              borderColor: theme.colors.red[3],
+              background: theme.colors.blueGray[1],
+              color: theme.colors.red[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.red[3]
+              color: theme.colors.red[3]
             };
           }
           break;
@@ -492,18 +492,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         case "warn":
           if (variant === "contained") {
             return {
-              background: theme.system.yellow[3],
-              color: theme.system.yellow[1]
+              background: theme.colors.yellow[3],
+              color: theme.colors.yellow[1]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.yellow[3],
-              background: theme.system.blueGray[1],
-              color: theme.system.yellow[3]
+              borderColor: theme.colors.yellow[3],
+              background: theme.colors.blueGray[1],
+              color: theme.colors.yellow[3]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.yellow[3]
+              color: theme.colors.yellow[3]
             };
           }
           break;
@@ -511,18 +511,18 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
         default:
           if (variant === "contained") {
             return {
-              background: theme.system.blueGray[2],
-              color: theme.system.gray[5]
+              background: theme.colors.blueGray[2],
+              color: theme.colors.gray[5]
             };
           } else if (variant === "outlined") {
             return {
-              borderColor: theme.system.blueGray[3],
-              color: theme.system.gray[5],
-              background: theme.system.blueGray[1]
+              borderColor: theme.colors.blueGray[3],
+              color: theme.colors.gray[5],
+              background: theme.colors.blueGray[1]
             };
           } else if (variant === "text") {
             return {
-              color: theme.system.gray[5]
+              color: theme.colors.gray[5]
             };
           }
       }

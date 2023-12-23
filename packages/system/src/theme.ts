@@ -19,12 +19,15 @@ const defaultTheme = <T extends SupportedThemeMode>(
   themeMode,
   supportedThemes,
   prefixCls,
-  family: "Inter,sans-serif",
   system: {
+    fontFamily: "Inter,sans-serif",
+    inherit: "inherit"
+  },
+  colors: {
     white: "#FFF",
     black: "#000",
     transparent: "transparent",
-    inherit: "inherit",
+    current: "currentColor",
     ...(colors[themeMode] ? colors[themeMode] : colors["dark"])
   },
   zIndices

@@ -52,9 +52,9 @@ const ResetCSS = () => {
       }
 
       html, body {
-        background: ${theme.system.blueGray[1]};
-        font-family: ${theme.family};
-        color: ${theme.system.blueGray[11]};
+        background: ${theme.colors.blueGray[1]};
+        font-family: ${theme.system.fontFamily};
+        color: ${theme.colors.blueGray[11]};
         min-height:100vh;
         height: auto;
         font-size: 14px;
@@ -66,7 +66,7 @@ const ResetCSS = () => {
       }
 
       * {
-        font-family: ${theme.family};
+        font-family: ${theme.system.fontFamily};
         box-sizing: border-box;
       }
 

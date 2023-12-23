@@ -3,7 +3,7 @@ import { FaMoon, FaSun } from "react-icons/fa6";
 
 const Wrapper = styled.header`
   height: 64px;
-  border-bottom: 1px solid ${({ theme }) => theme.system.blueGray[3]};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.blueGray[3]};
   padding: 0 24px;
   display: flex;
   align-items: center;
