@@ -3,7 +3,7 @@ import { Config } from "jest";
 const config: Config = {
   testEnvironment: "jsdom",
   moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
-  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!packages/**/*.stories.{ts,tsx}"],
+  collectCoverageFrom: ["packages/**/*.{ts,tsx}", "!packages/**/*.stories.{ts,tsx}", "!packages/**/dist/*"],
   collectCoverage: true,
   transformIgnorePatterns: ["/node_modules/"],
   transform: {
