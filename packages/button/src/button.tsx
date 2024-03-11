@@ -87,7 +87,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.defaultProps = {
-  scheme: "primary",
+  scheme: "gray",
   variant: "contained",
   size: "middle",
   type: "button",

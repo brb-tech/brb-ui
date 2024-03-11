@@ -10,15 +10,15 @@ export const btnFontSize: Record<Required<ButtonProps>["size"], number> = {
 };
 
 export const btnHeight: Record<Required<ButtonProps>["size"], number> = {
-  large: 48,
-  middle: 40,
-  small: 32
+  large: 40,
+  middle: 32,
+  small: 24
 };
 
 export const btnBorderRadius: Record<Required<ButtonProps>["size"], number> = {
-  large: 10,
-  middle: 8,
-  small: 6
+  large: 6,
+  middle: 4,
+  small: 2
 };
 
 export const btnPaddingInline: Record<Required<ButtonProps>["size"], number> = {
@@ -60,348 +60,65 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   }};
 
   ${({ theme, variant, scheme }) => {
-    switch (scheme) {
-      case "default":
-        if (variant === "contained") {
-          return {
-            background: theme.colors.blueGray[3],
-            color: theme.colors.gray[11]
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.blueGray[4],
-            color: theme.colors.gray[11]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.gray[11]
-          };
-        }
-        break;
-      case "primary":
-        if (variant === "contained") {
-          return {
-            background: theme.colors.primary[6],
-            color: theme.colors.white
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.primary[6],
-            color: theme.colors.primary[6]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.primary[6]
-          };
-        }
-        break;
-
-      case "info":
-        if (variant === "contained") {
-          return {
-            background: theme.colors.green[6],
-            color: theme.colors.white
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.green[6],
-            color: theme.colors.green[6]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.green[6]
-          };
-        }
-        break;
-
-      case "danger":
-        if (variant === "contained") {
-          return {
-            background: theme.colors.red[6],
-            color: theme.colors.white
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.red[6],
-            color: theme.colors.red[6]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.red[6]
-          };
-        }
-        break;
-      case "warn":
-        if (variant === "contained") {
-          return {
-            background: theme.colors.yellow[6],
-            color: theme.colors.white
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.yellow[6],
-            color: theme.colors.yellow[6]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.yellow[6]
-          };
-        }
-        break;
-
-      default:
-        if (variant === "contained") {
-          return {
-            background: theme.colors.blueGray[3],
-            color: theme.colors.gray[11]
-          };
-        } else if (variant === "outlined") {
-          return {
-            borderColor: theme.colors.blueGray[4],
-            color: theme.colors.gray[11]
-          };
-        } else if (variant === "text") {
-          return {
-            color: theme.colors.gray[11]
-          };
-        }
+    const currentColor = theme.system.colors[scheme || "slate"];
+    if (variant === "contained") {
+      return {
+        background: currentColor[5],
+        color: theme.system.colors.slate[12]
+      };
+    } else if (variant === "outlined") {
+      return {
+        borderColor: currentColor[5],
+        color: currentColor[5]
+      };
+    } else if (variant === "text") {
+      return {
+        color: currentColor[5]
+      };
     }
   }};
 
   :hover {
     ${({ theme, variant, scheme }) => {
-      switch (scheme) {
-        case "default":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[2],
-              color: theme.colors.gray[11]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[4],
-              color: theme.colors.gray[11],
-              background: theme.colors.blueGray[2]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[9]
-            };
-          }
-          break;
+      const currentColor = theme.system.colors[scheme || "slate"];
 
-        case "primary":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.primary[5],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.primary[5],
-              color: theme.colors.primary[5],
-              background: theme.colors.blueGray[2]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.primary[5]
-            };
-          }
-          break;
-
-        case "info":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.green[5],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.green[5],
-              background: theme.colors.blueGray[2],
-              color: theme.colors.green[5]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.green[5]
-            };
-          }
-          break;
-
-        case "danger":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.red[5],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.red[5],
-              background: theme.colors.blueGray[2],
-              color: theme.colors.red[5]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.red[5]
-            };
-          }
-          break;
-
-        case "warn":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.yellow[5],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.yellow[5],
-              background: theme.colors.blueGray[2],
-              color: theme.colors.yellow[5]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.yellow[5]
-            };
-          }
-          break;
-
-        default:
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[2],
-              color: theme.colors.gray[11]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[4],
-              color: theme.colors.gray[11],
-              background: theme.colors.blueGray[2]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[9]
-            };
-          }
+      if (variant === "contained") {
+        return {
+          background: currentColor[5],
+          color: theme.system.colors.white
+        };
+      } else if (variant === "outlined") {
+        return {
+          borderColor: currentColor[5],
+          color: currentColor[5],
+          background: theme.system.colors.gray[2]
+        };
+      } else if (variant === "text") {
+        return {
+          color: currentColor[5]
+        };
       }
     }}
   }
 
   :active {
     ${({ theme, variant, scheme }) => {
-      switch (scheme) {
-        case "default":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[4],
-              color: theme.colors.gray[11]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[4],
-              color: theme.colors.gray[11],
-              background: theme.colors.blueGray[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[11]
-            };
-          }
-          break;
-
-        case "primary":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.primary[7],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.primary[7],
-              color: theme.colors.primary[7],
-              background: theme.colors.blueGray[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.primary[7]
-            };
-          }
-          break;
-
-        case "info":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.green[7],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.green[7],
-              background: theme.colors.blueGray[3],
-              color: theme.colors.green[7]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.green[7]
-            };
-          }
-          break;
-
-        case "danger":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.red[7],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.red[7],
-              background: theme.colors.blueGray[3],
-              color: theme.colors.red[7]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.red[7]
-            };
-          }
-          break;
-
-        case "warn":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.yellow[7],
-              color: theme.colors.white
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.yellow[7],
-              background: theme.colors.blueGray[3],
-              color: theme.colors.yellow[7]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.yellow[7]
-            };
-          }
-          break;
-
-        default:
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[4],
-              color: theme.colors.gray[11]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[4],
-              color: theme.colors.gray[11],
-              background: theme.colors.blueGray[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[11]
-            };
-          }
+      const currentColor = theme.system.colors[scheme || "slate"];
+      if (variant === "contained") {
+        return {
+          background: currentColor[7],
+          color: theme.system.colors.white
+        };
+      } else if (variant === "outlined") {
+        return {
+          borderColor: currentColor[7],
+          color: currentColor[7],
+          background: theme.system.colors.gray[3]
+        };
+      } else if (variant === "text") {
+        return {
+          color: currentColor[7]
+        };
       }
     }}
   }
@@ -412,119 +129,22 @@ export const Wrapper = styled("button")<Omit<ButtonProps, "loading"> & { loading
   &[disabled],
   &[loading] {
     ${({ theme, variant, scheme }) => {
-      switch (scheme) {
-        case "default":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[2],
-              color: theme.colors.gray[5]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[3],
-              color: theme.colors.gray[5],
-              background: theme.colors.blueGray[1]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[5]
-            };
-          }
-          break;
-
-        case "primary":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.primary[3],
-              color: theme.colors.primary[1]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.primary[3],
-              background: theme.colors.blueGray[1],
-              color: theme.colors.primary[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.primary[3]
-            };
-          }
-          break;
-
-        case "info":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.green[3],
-              color: theme.colors.green[1]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.green[3],
-              background: theme.colors.blueGray[1],
-              color: theme.colors.green[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.green[3]
-            };
-          }
-          break;
-
-        case "danger":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.red[3],
-              color: theme.colors.red[1]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.red[3],
-              background: theme.colors.blueGray[1],
-              color: theme.colors.red[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.red[3]
-            };
-          }
-          break;
-
-        case "warn":
-          if (variant === "contained") {
-            return {
-              background: theme.colors.yellow[3],
-              color: theme.colors.yellow[1]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.yellow[3],
-              background: theme.colors.blueGray[1],
-              color: theme.colors.yellow[3]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.yellow[3]
-            };
-          }
-          break;
-
-        default:
-          if (variant === "contained") {
-            return {
-              background: theme.colors.blueGray[2],
-              color: theme.colors.gray[5]
-            };
-          } else if (variant === "outlined") {
-            return {
-              borderColor: theme.colors.blueGray[3],
-              color: theme.colors.gray[5],
-              background: theme.colors.blueGray[1]
-            };
-          } else if (variant === "text") {
-            return {
-              color: theme.colors.gray[5]
-            };
-          }
+      const currentColor = theme.system.colors[scheme || "slate"];
+      if (variant === "contained") {
+        return {
+          background: currentColor[3],
+          color: currentColor[1]
+        };
+      } else if (variant === "outlined") {
+        return {
+          borderColor: currentColor[3],
+          background: theme.system.colors.gray[1],
+          color: currentColor[3]
+        };
+      } else if (variant === "text") {
+        return {
+          color: currentColor[3]
+        };
       }
     }}
   }

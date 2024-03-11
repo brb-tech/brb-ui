@@ -1,4 +1,4 @@
-import { CreateStyledProps } from "@brb-ui/system";
+import { CreateStyledProps, Theme } from "@brb-ui/system";
 import { IconProps } from "@brb-ui/icon";
 
 export interface ButtonProps extends CreateStyledProps<"button"> {
@@ -18,7 +18,7 @@ export interface ButtonProps extends CreateStyledProps<"button"> {
    * @description theme color scheme
    * @default primary
    */
-  scheme?: "default" | "primary" | "danger" | "info" | "warn";
+  scheme?: keyof Omit<Theme["system"]["colors"], "white" | "black" | "whiteAlpha" | "blackAlpha">;
 
   /**
    * @description The button component style type

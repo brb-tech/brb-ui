@@ -52,9 +52,9 @@ const ResetCSS = () => {
       }
 
       html, body {
-        background: ${theme.colors.blueGray[1]};
+        background: ${theme.system.colors.slate[1]};
         font-family: ${theme.system.fontFamily};
-        color: ${theme.colors.blueGray[11]};
+        color: ${theme.system.colors.slate[12]};
         min-height:100vh;
         height: auto;
         font-size: 14px;
@@ -81,9 +81,6 @@ const ResetCSS = () => {
       input[type=password]:not(:placeholder-shown) {
         font-size: 24px;
         font-family: caption;
-      }
-      .grecaptcha-badge{
-        display: none;
       }
 `}
     />

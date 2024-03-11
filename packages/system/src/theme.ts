@@ -1,6 +1,8 @@
-import zIndices from "./zIndices";
+import whiteAlpha from "./whiteAlpha";
+import blackAlpha from "./blackAlpha";
 import light from "./light";
 import dark from "./dark";
+import zIndices from "./zIndices";
 
 export const SUPPORTED_THEME_MODES = ["dark", "light"] as const;
 
@@ -21,16 +23,18 @@ const defaultTheme = <T extends SupportedThemeMode>(
   prefixCls,
   system: {
     fontFamily: "Inter,sans-serif",
-    inherit: "inherit"
-  },
-  colors: {
-    white: "#FFF",
-    black: "#000",
+    inherit: "inherit",
     transparent: "transparent",
-    current: "currentColor",
-    ...(colors[themeMode] ? colors[themeMode] : colors["dark"])
-  },
-  zIndices
+    currentColor: "currentColor",
+    colors: {
+      white: "#FFF",
+      black: "#000",
+      whiteAlpha,
+      blackAlpha,
+      ...colors[themeMode]
+    },
+    zIndices
+  }
 });
 
 export type DefaultTheme = ReturnType<typeof defaultTheme>;
