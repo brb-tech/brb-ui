@@ -20,21 +20,21 @@ exports[`renders correct with attributes: data-scheme 1`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  background: #318BF5;
-  color: #FFF;
+  background: #313131;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #0B71EA;
+  background: #313131;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #539EF7;
+  background: #484848;
   color: #FFF;
 }
 
@@ -44,19 +44,19 @@ exports[`renders correct with attributes: data-scheme 1`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #07448C;
-  color: #12233A;
+  background: #222222;
+  color: #111111;
 }
 
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="gray"
     data-testid="btn"
     data-variant="contained"
     type="button"
   >
-    primary
+    gray
   </button>
 </div>
 `;
@@ -81,21 +81,21 @@ exports[`renders correct with attributes: data-scheme 2`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  background: #F7B545;
-  color: #FFF;
+  background: #2e3135;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #F5A113;
+  background: #2e3135;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #F9C164;
+  background: #43484e;
   color: #FFF;
 }
 
@@ -105,202 +105,19 @@ exports[`renders correct with attributes: data-scheme 2`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #986206;
-  color: #2F2A20;
+  background: #212225;
+  color: #111113;
 }
 
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="warn"
+    data-scheme="slate"
     data-testid="btn"
     data-variant="contained"
     type="button"
   >
-    warn
-  </button>
-</div>
-`;
-
-exports[`renders correct with attributes: data-scheme 3`] = `
-.emotion-0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  border: 1px solid;
-  border-color: transparent;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
-  font-size: 14px;
-  padding-inline: 12px;
-  background: #31353D;
-  color: #F4F4F5;
-}
-
-.emotion-0:hover {
-  background: #1B1E24;
-  color: #F4F4F5;
-}
-
-.emotion-0:active {
-  background: #3D424D;
-  color: #F4F4F5;
-}
-
-.emotion-0:not([loading])[disabled] {
-  cursor: not-allowed;
-}
-
-.emotion-0[disabled],
-.emotion-0[loading] {
-  background: #1B1E24;
-  color: #414447;
-}
-
-<div>
-  <button
-    class="brb-button emotion-0"
-    data-scheme="default"
-    data-testid="btn"
-    data-variant="contained"
-    type="button"
-  >
-    default
-  </button>
-</div>
-`;
-
-exports[`renders correct with attributes: data-scheme 4`] = `
-.emotion-0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  border: 1px solid;
-  border-color: transparent;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
-  font-size: 14px;
-  padding-inline: 12px;
-  background: #DC4B55;
-  color: #FFF;
-}
-
-.emotion-0:hover {
-  background: #CE2833;
-  color: #FFF;
-}
-
-.emotion-0:active {
-  background: #E26971;
-  color: #FFF;
-}
-
-.emotion-0:not([loading])[disabled] {
-  cursor: not-allowed;
-}
-
-.emotion-0[disabled],
-.emotion-0[loading] {
-  background: #7B181F;
-  color: #2B1A22;
-}
-
-<div>
-  <button
-    class="brb-button emotion-0"
-    data-scheme="danger"
-    data-testid="btn"
-    data-variant="contained"
-    type="button"
-  >
-    danger
-  </button>
-</div>
-`;
-
-exports[`renders correct with attributes: data-scheme 5`] = `
-.emotion-0 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  border: 1px solid;
-  border-color: transparent;
-  background: transparent;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
-  font-size: 14px;
-  padding-inline: 12px;
-  background: #06B196;
-  color: #FFF;
-}
-
-.emotion-0:hover {
-  background: #05947D;
-  color: #FFF;
-}
-
-.emotion-0:active {
-  background: #00D6B4;
-  color: #FFF;
-}
-
-.emotion-0:not([loading])[disabled] {
-  cursor: not-allowed;
-}
-
-.emotion-0[disabled],
-.emotion-0[loading] {
-  background: #03594B;
-  color: #092420;
-}
-
-<div>
-  <button
-    class="brb-button emotion-0"
-    data-scheme="info"
-    data-testid="btn"
-    data-variant="contained"
-    type="button"
-  >
-    info
+    slate
   </button>
 </div>
 `;
@@ -325,21 +142,21 @@ exports[`renders correct with attributes: data-variant 1`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  background: #318BF5;
-  color: #FFF;
+  background: #2e3135;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #0B71EA;
+  background: #2e3135;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #539EF7;
+  background: #43484e;
   color: #FFF;
 }
 
@@ -349,14 +166,14 @@ exports[`renders correct with attributes: data-variant 1`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #07448C;
-  color: #12233A;
+  background: #212225;
+  color: #111113;
 }
 
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-testid="btn"
     data-variant="contained"
     type="button"
@@ -386,24 +203,24 @@ exports[`renders correct with attributes: data-variant 2`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  border-color: #318BF5;
-  color: #318BF5;
+  border-color: #2e3135;
+  color: #2e3135;
 }
 
 .emotion-0:hover {
-  border-color: #0B71EA;
-  color: #0B71EA;
-  background: #1B1E24;
+  border-color: #2e3135;
+  color: #2e3135;
+  background: #191919;
 }
 
 .emotion-0:active {
-  border-color: #539EF7;
-  color: #539EF7;
-  background: #31353D;
+  border-color: #43484e;
+  color: #43484e;
+  background: #222222;
 }
 
 .emotion-0:not([loading])[disabled] {
@@ -412,15 +229,15 @@ exports[`renders correct with attributes: data-variant 2`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  border-color: #07448C;
-  background: #141619;
-  color: #07448C;
+  border-color: #212225;
+  background: #111111;
+  color: #212225;
 }
 
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-testid="btn"
     data-variant="outlined"
     type="button"
@@ -450,19 +267,19 @@ exports[`renders correct with attributes: data-variant 3`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  color: #318BF5;
+  color: #2e3135;
 }
 
 .emotion-0:hover {
-  color: #0B71EA;
+  color: #2e3135;
 }
 
 .emotion-0:active {
-  color: #539EF7;
+  color: #43484e;
 }
 
 .emotion-0:not([loading])[disabled] {
@@ -471,13 +288,13 @@ exports[`renders correct with attributes: data-variant 3`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  color: #07448C;
+  color: #212225;
 }
 
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-testid="btn"
     data-variant="text"
     type="button"
@@ -507,21 +324,21 @@ exports[`renders correct with icon in props 1`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  background: #318BF5;
-  color: #FFF;
+  background: #2e3135;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #0B71EA;
+  background: #2e3135;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #539EF7;
+  background: #43484e;
   color: #FFF;
 }
 
@@ -531,8 +348,8 @@ exports[`renders correct with icon in props 1`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #07448C;
-  color: #12233A;
+  background: #212225;
+  color: #111113;
 }
 
 .emotion-1 {
@@ -556,7 +373,7 @@ exports[`renders correct with icon in props 1`] = `
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-variant="contained"
     type="button"
   >
@@ -602,21 +419,21 @@ exports[`renders correct with icon no children 1`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
-  width: 40px;
-  background: #318BF5;
-  color: #FFF;
+  width: 32px;
+  background: #2e3135;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #0B71EA;
+  background: #2e3135;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #539EF7;
+  background: #43484e;
   color: #FFF;
 }
 
@@ -626,8 +443,8 @@ exports[`renders correct with icon no children 1`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #07448C;
-  color: #12233A;
+  background: #212225;
+  color: #111113;
 }
 
 .emotion-1 {
@@ -649,7 +466,7 @@ exports[`renders correct with icon no children 1`] = `
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-variant="contained"
     type="button"
   >
@@ -710,21 +527,21 @@ exports[`renders correct with loading 1`] = `
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  height: 40px;
-  border-radius: 8px;
+  height: 32px;
+  border-radius: 4px;
   font-size: 14px;
   padding-inline: 12px;
-  background: #318BF5;
-  color: #FFF;
+  background: #2e3135;
+  color: #edeef0;
 }
 
 .emotion-0:hover {
-  background: #0B71EA;
+  background: #2e3135;
   color: #FFF;
 }
 
 .emotion-0:active {
-  background: #539EF7;
+  background: #43484e;
   color: #FFF;
 }
 
@@ -734,8 +551,8 @@ exports[`renders correct with loading 1`] = `
 
 .emotion-0[disabled],
 .emotion-0[loading] {
-  background: #07448C;
-  color: #12233A;
+  background: #212225;
+  color: #111113;
 }
 
 .emotion-1 {
@@ -767,7 +584,7 @@ exports[`renders correct with loading 1`] = `
 <div>
   <button
     class="brb-button emotion-0"
-    data-scheme="primary"
+    data-scheme="slate"
     data-testid="btn"
     data-variant="contained"
     disabled=""

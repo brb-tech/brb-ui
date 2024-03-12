@@ -18,7 +18,7 @@ export interface ButtonProps extends CreateStyledProps<"button"> {
    * @description theme color scheme
    * @default primary
    */
-  scheme?: keyof Omit<Theme["system"]["colors"], "white" | "black" | "whiteAlpha" | "blackAlpha">;
+  scheme?: Exclude<keyof Theme["system"]["colors"], "white" | "black" | "whiteAlpha" | "blackAlpha">;
 
   /**
    * @description The button component style type

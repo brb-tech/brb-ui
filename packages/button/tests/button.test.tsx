@@ -1,5 +1,6 @@
 import { Button } from "../src";
 import { accessibility, render } from "@brb-ui/jest";
+import React from "react";
 import { BsFacebook } from "react-icons/bs";
 
 test("passes accessibility test", async () => {
@@ -9,43 +10,19 @@ test("passes accessibility test", async () => {
 describe("renders correct with attributes:", () => {
   test("data-scheme", () => {
     const { getByTestId, container, rerender } = render(
-      <Button scheme="primary" data-testid="btn">
-        primary
+      <Button scheme="gray" data-testid="btn">
+        gray
       </Button>
     );
-    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "primary");
+    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "gray");
     expect(container).toMatchSnapshot();
 
     rerender(
-      <Button scheme="warn" data-testid="btn">
-        warn
+      <Button scheme="slate" data-testid="btn">
+        slate
       </Button>
     );
-    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "warn");
-    expect(container).toMatchSnapshot();
-
-    rerender(
-      <Button scheme="default" data-testid="btn">
-        default
-      </Button>
-    );
-    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "default");
-    expect(container).toMatchSnapshot();
-
-    rerender(
-      <Button scheme="danger" data-testid="btn">
-        danger
-      </Button>
-    );
-    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "danger");
-    expect(container).toMatchSnapshot();
-
-    rerender(
-      <Button scheme="info" data-testid="btn">
-        info
-      </Button>
-    );
-    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "info");
+    expect(getByTestId("btn")).toHaveAttribute("data-scheme", "slate");
     expect(container).toMatchSnapshot();
   });
 
