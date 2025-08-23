@@ -4,7 +4,6 @@
     "esbenp.prettier-vscode",
     "formulahendry.auto-rename-tag",
     "formulahendry.auto-close-tag",
-    "atlassian.atlascode",
     "styled-components.vscode-styled-components"
   ]
 }
