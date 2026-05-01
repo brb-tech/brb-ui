@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
+import type { CSSProperties } from "react";
 import { Button } from "../src";
-import { css } from "@brb-ui/system";
 import { BsFacebook } from "react-icons/bs";
 
 export default {
@@ -8,22 +8,22 @@ export default {
   component: Button
 };
 
-const gridRow = css({
+const gridRow: CSSProperties = {
   display: "grid",
   gap: 8,
   width: "fit-content"
-});
+};
 
-const gridColumn = css({
+const gridColumn: CSSProperties = {
   display: "grid",
   gridAutoFlow: "column",
   gap: 12
-});
+};
 
 export const Default: React.FC = () => {
   return (
-    <div css={gridRow}>
-      <div css={gridColumn}>
+    <div style={gridRow}>
+      <div style={gridColumn}>
         <Button scheme="primary">Primary Contained</Button>
         <Button scheme="primary" variant="outlined">
           Primary Outlined
@@ -32,7 +32,7 @@ export const Default: React.FC = () => {
           Primary Text
         </Button>
       </div>
-      <div css={gridColumn}>
+      <div style={gridColumn}>
         <Button scheme="default">Default Contained</Button>
         <Button scheme="default" variant="outlined">
           Default Outlined
@@ -41,7 +41,7 @@ export const Default: React.FC = () => {
           Default Text
         </Button>
       </div>
-      <div css={gridColumn}>
+      <div style={gridColumn}>
         <Button scheme="info">Info Contained</Button>
         <Button scheme="info" variant="outlined">
           Info Outlined
@@ -50,7 +50,7 @@ export const Default: React.FC = () => {
           Info Text
         </Button>
       </div>
-      <div css={gridColumn}>
+      <div style={gridColumn}>
         <Button scheme="warn">Warn Contained</Button>
         <Button scheme="warn" variant="outlined">
           Warn Outlined
@@ -59,7 +59,7 @@ export const Default: React.FC = () => {
           Warn Text
         </Button>
       </div>
-      <div css={gridColumn}>
+      <div style={gridColumn}>
         <Button scheme="danger">Danger Contained</Button>
         <Button scheme="danger" variant="outlined">
           Danger Outlined
@@ -74,7 +74,7 @@ export const Default: React.FC = () => {
 
 export const Size: React.FC = () => {
   return (
-    <div css={css([gridRow, { width: 100 }])}>
+    <div style={{ ...gridRow, width: 100 }}>
       <Button scheme="primary" size="large">
         Large
       </Button>
@@ -100,7 +100,7 @@ export const Loading: React.FC = () => {
   }, [loading]);
 
   return (
-    <div css={css([gridRow])}>
+    <div style={gridRow}>
       <Button onClick={setLoading.bind(null, true)} loading={loading}>
         Text
       </Button>

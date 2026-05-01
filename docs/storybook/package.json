@@ -28,7 +28,6 @@
     "@storybook/react-vite": "^8.6.18",
     "@storybook/test": "^8.6.18",
     "@storybook/theming": "^8.6.18",
-    "@swc/plugin-emotion": "^14.9.0",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.0",

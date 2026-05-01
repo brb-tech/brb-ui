@@ -16,8 +16,7 @@ export function createLibViteConfig({ root, entry, external, jsx = true, jsxImpo
   if (jsx) {
     plugins.push(
       react({
-        jsxImportSource,
-        plugins: [["@swc/plugin-emotion", {}]]
+        jsxImportSource
       })
     );
   }

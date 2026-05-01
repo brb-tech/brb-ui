@@ -13,7 +13,6 @@
     }
   },
   "dependencies": {
-    "@swc/plugin-emotion": "^14.9.0",
     "@vitejs/plugin-react-swc": "^4.3.0",
     "vite-plugin-dts": "^5.0.0"
   },

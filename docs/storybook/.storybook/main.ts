@@ -32,8 +32,7 @@ const config: StorybookConfig = {
       },
       plugins: [
         react({
-          jsxImportSource: "@brb-ui/system",
-          plugins: [["@swc/plugin-emotion", {}]]
+          jsxImportSource: "@brb-ui/system"
         })
       ]
     });

@@ -19,7 +19,6 @@
     "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@swc/plugin-emotion": "^14.9.0",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react-swc": "^4.3.0",

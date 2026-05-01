@@ -4,7 +4,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- This example uses [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) with [@swc/plugin-emotion](https://github.com/swc-contrib/swc-plugin-emotion) for Fast Refresh and Emotion’s `css` prop.
+- This example uses [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) with `jsxImportSource: "@brb-ui/system"` (same automatic JSX runtime as consuming apps). Emotion’s `css` prop is **not** compiled here: if you use it in your app, configure `@emotion/babel-plugin` or `@swc/plugin-emotion` in **your** bundler.
 
 ## Expanding the ESLint configuration
 

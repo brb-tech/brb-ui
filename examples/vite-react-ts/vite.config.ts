@@ -8,8 +8,7 @@ export default defineConfig({
   },
   plugins: [
     react({
-      jsxImportSource: "@brb-ui/system",
-      plugins: [["@swc/plugin-emotion", {}]]
+      jsxImportSource: "@brb-ui/system"
     })
   ]
 });
