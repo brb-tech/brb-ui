@@ -1,7 +1,11 @@
-import { StorybookConfig } from "@storybook/react-webpack5";
-import { createRequire } from "node:module";
+import type { StorybookConfig } from "@storybook/react-vite";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { mergeConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-const require = createRequire(import.meta.url);
+const storybookDir = fileURLToPath(new URL(".", import.meta.url));
+const systemRoot = path.resolve(storybookDir, "../../../packages/system/src");
 
 const config: StorybookConfig = {
   stories: ["../../../packages/**/*.stories.mdx", "../../../packages/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -11,55 +15,39 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y"
-    // {
-    //   name: "@storybook/addon-storysource",
-    //   options: {
-    //     loaderOptions: {
-    //       prettierConfig: {
-    //         trailingComma: "none",
-    //         tabWidth: 2,
-    //         printWidth: 120,
-    //         semi: true,
-    //         singleQuote: false,
-    //         arrowParens: "always",
-    //         jsxSingleQuote: false
-    //       }
-    //     },
-    //     sourceLoaderOptions: {
-    //       injectStoryParameters: false
-    //     }
-    //   }
-    // }
   ],
+
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-vite",
     options: {}
   },
-  webpackFinal: async (config, { configType }) => {
-    return config;
+
+  async viteFinal(userConfig) {
+    return mergeConfig(userConfig, {
+      resolve: {
+        alias: {
+          "@brb-ui/system/jsx-runtime": path.join(systemRoot, "jsx-runtime.ts"),
+          "@brb-ui/system/jsx-dev-runtime": path.join(systemRoot, "jsx-dev-runtime.ts")
+        }
+      },
+      plugins: [
+        react({
+          jsxImportSource: "@brb-ui/system",
+          babel: {
+            plugins: ["@emotion/babel-plugin"]
+          }
+        })
+      ]
+    });
   },
-  // staticDirs: ["../public"],
+
   core: {
     disableTelemetry: true
   },
-  async babel(config, { configType }) {
-    const presets = [
-      require.resolve("@babel/preset-env"),
-      require.resolve("@babel/preset-react"),
-      require.resolve("@babel/preset-typescript"),
-      require.resolve("@emotion/babel-preset-css-prop")
-    ];
 
-    return {
-      ...config,
-      presets
-    };
-  },
-  features: {
-    buildStoriesJson: true
-  },
   docs: {
     autodocs: true
   }
 };
+
 export default config;

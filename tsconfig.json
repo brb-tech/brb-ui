@@ -15,8 +15,12 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "paths": {
+      "@brb-ui/system/jsx-runtime": ["./packages/system/src/jsx-runtime.ts"],
+      "@brb-ui/system/jsx-dev-runtime": ["./packages/system/src/jsx-dev-runtime.ts"]
+    }
   },
-  "include": ["packages", "tools"],
+  "include": ["packages", "tools", "vitest.config.ts", "vitest-env.d.ts"],
   "exclude": ["**/node_modules"]
 }

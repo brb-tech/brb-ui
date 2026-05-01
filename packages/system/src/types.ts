@@ -1,12 +1,13 @@
-import { CreateStyled } from "@emotion/styled";
-import { Theme } from ".";
+import type { ComponentPropsWithoutRef } from "react";
+import type { CreateStyled } from "@emotion/styled";
+import type { Theme } from ".";
 
 /**
- * @description Styled Component Props form Emotion
+ * @description Styled component props from Emotion (includes DOM props such as children)
  */
-export type CreateStyledProps<Tag extends keyof JSX.IntrinsicElements> = ReturnType<
-  CreateStyled[Tag]
->["defaultProps"] & {};
+export type CreateStyledProps<Tag extends keyof React.JSX.IntrinsicElements> = ComponentPropsWithoutRef<
+  ReturnType<CreateStyled[Tag]>
+>;
 
 /**
  * @description BRB Theme Config

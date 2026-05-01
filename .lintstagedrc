@@ -1,4 +1,4 @@
 {
-  "**/*.{js,jsx,ts,tsx}": ["eslint --quiet"],
-  "**/*.{js,jsx,ts,tsx,json}": ["prettier --write"]
+  "**/*.{js,jsx,ts,tsx}": ["oxlint --fix"],
+  "**/*.{js,jsx,ts,tsx,json,jsonc,yml,yaml,md}": ["oxfmt"]
 }

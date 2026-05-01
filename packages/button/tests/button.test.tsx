@@ -1,5 +1,5 @@
 import { Button } from "../src";
-import { accessibility, render } from "@brb-ui/jest";
+import { accessibility, render } from "@brb-ui/testing";
 
 test("passes accessibility test", async () => {
   await accessibility(<Button>test</Button>);

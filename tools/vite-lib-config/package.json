@@ -1,0 +1,26 @@
+{
+  "name": "@brb-ui/vite-lib-config",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "types": "./vite.lib.config.d.ts",
+  "exports": {
+    ".": {
+      "types": "./vite.lib.config.d.ts",
+      "import": "./vite.lib.config.mjs",
+      "default": "./vite.lib.config.mjs"
+    }
+  },
+  "peerDependencies": {
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@emotion/babel-plugin": "^11.13.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  }
+}

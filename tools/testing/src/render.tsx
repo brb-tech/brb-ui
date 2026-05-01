@@ -1,15 +1,9 @@
-import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
 import { render as Render, RenderOptions as TlRenderOptions } from "@testing-library/react";
 import * as React from "react";
 import userEvent from "@testing-library/user-event";
 import { Provider } from "@brb-ui/system";
-import { toHaveNoViolations } from "jest-axe";
-
-expect.extend(toHaveNoViolations);
-
-const ProviderWrapper: React.JSXElementConstructor<{ children: React.ReactElement }> = (props) => (
-  <Provider {...props} />
-);
+const ProviderWrapper = (props: { children: React.ReactNode }) => <Provider {...props} />;
 
 export interface RenderOptions extends TlRenderOptions {
   withSystemProvider?: boolean;

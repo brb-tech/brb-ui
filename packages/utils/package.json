@@ -23,24 +23,18 @@
     "url": "https://github.com/brb-tech/brb-ui/issues"
   },
   "scripts": {
-    "build": "tsup src --dts",
+    "build": "vite build",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
   "devDependencies": {
+    "@brb-ui/vite-lib-config": "workspace:*",
+    "@types/node": "^22.13.1",
     "clean-package": "^2.2.0",
-    "tsup": "^7.2.0"
-  },
-  "tsup": {
-    "format": [
-      "cjs",
-      "esm"
-    ],
-    "target": "es2019",
-    "clean": true,
-    "sourcemap": true
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
   },
   "publishConfig": {
     "access": "public"

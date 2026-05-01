@@ -1,5 +1,5 @@
 import React from "react";
-import { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react";
 import { Provider } from "@brb-ui/system";
 import { themes } from "@storybook/theming";
 import "@fontsource/inter/400.css";
@@ -9,7 +9,6 @@ import "@fontsource/inter/700.css";
 
 const preview: Preview = {
   parameters: {
-    // layout: "fullscreen",
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       expanded: true,
@@ -24,7 +23,7 @@ const preview: Preview = {
     }
   },
   decorators: [
-    (StoryFn, context) => {
+    (StoryFn) => {
       return (
         <Provider>
           <StoryFn />

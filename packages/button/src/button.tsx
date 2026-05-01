@@ -13,15 +13,18 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       loading,
-      size,
-      iconPlacement,
+      size = "middle",
+      iconPlacement = "right",
       disabled,
-      loadingIcon,
+      loadingIcon = <LoadingOutlinedIcon />,
       iconSize,
       icon,
       iconAnimation,
       iconColor,
-      ...props
+      scheme = "primary",
+      variant = "contained",
+      type = "button",
+      ...rest
     },
     ref
   ) => {
@@ -42,15 +45,16 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Wrapper
         className={cx(`${prefixCls}-button`, className)}
-        data-scheme={props.scheme}
-        data-variant={props.variant}
+        data-scheme={scheme}
+        data-variant={variant}
         loading={loading ? "" : undefined}
         iconPlacement={iconPlacement}
         size={size}
         ref={ref}
         hasChildren={!!children}
         disabled={disabled || loading}
-        {...props}
+        type={type}
+        {...rest}
       >
         {children}
 
@@ -64,36 +68,26 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           />
         ) : (
           transitions((style, item) => {
-            return (
-              item && (
-                <animated.div
-                  style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
-                  className={`${prefixCls}-slide`}
-                >
-                  <Icon
-                    svg={loadingIcon}
-                    animation={loading ? iconAnimation || "rotation" : undefined}
-                    size={iconSize}
-                    color={iconColor}
-                  />
-                </animated.div>
-              )
-            );
+            return item ? (
+              // @ts-expect-error react-spring animated.div typings omit children under React 19
+              <animated.div
+                style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
+                className={`${prefixCls}-slide`}
+              >
+                <Icon
+                  svg={loadingIcon}
+                  animation={loading ? iconAnimation || "rotation" : undefined}
+                  size={iconSize}
+                  color={iconColor}
+                />
+              </animated.div>
+            ) : null;
           })
         )}
       </Wrapper>
     );
   }
 );
-
-Button.defaultProps = {
-  scheme: "primary",
-  variant: "contained",
-  size: "middle",
-  type: "button",
-  iconPlacement: "right",
-  loadingIcon: <LoadingOutlinedIcon />
-};
 
 if (__DEV__) {
   Button.displayName = "Button";
