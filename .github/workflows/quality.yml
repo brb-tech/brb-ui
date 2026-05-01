@@ -32,8 +32,8 @@ jobs:
       - name: Run tests
         run: pnpm test
 
-  eslint:
-    name: ESLint
+  oxlint:
+    name: Oxlint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -42,7 +42,7 @@ jobs:
       - name: Install
         uses: ./.github/install
 
-      - name: Run ESLint
+      - name: Run oxlint
         run: pnpm lint
 
   types:
@@ -58,8 +58,8 @@ jobs:
       - name: Run typecheck
         run: pnpm typecheck
 
-  prettier:
-    name: Prettier
+  oxfmt:
+    name: Oxfmt
     runs-on: ubuntu-latest
     steps:
       - name: Checkout branch
@@ -68,5 +68,5 @@ jobs:
       - name: Install
         uses: ./.github/install
 
-      - name: Run prettier
+      - name: Run oxfmt
         run: pnpm format:check
