@@ -1,7 +1,7 @@
 {
   "name": "brb-ui",
   "private": true,
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.33.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git"
@@ -20,9 +20,9 @@
     "dev:examples": "turbo run dev --filter=./examples/*",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "oxlint packages tools docs/storybook vitest.config.ts",
-    "format:write": "oxfmt packages tools docs/storybook examples vitest.config.ts vitest-env.d.ts",
-    "format:check": "oxfmt --check packages tools docs/storybook examples vitest.config.ts vitest-env.d.ts",
+    "lint": "oxlint packages tools docs/storybook vitest.config.mts",
+    "format:write": "oxfmt --ignore-path=.oxfmtignore packages tools docs/storybook examples vitest.config.mts vitest-env.d.ts",
+    "format:check": "oxfmt --check --ignore-path=.oxfmtignore packages tools docs/storybook examples vitest.config.mts vitest-env.d.ts",
     "typecheck": "tsc --noEmit",
     "clean": "turbo run clean && rm -rf node_modules && rm -rf out",
     "prepare": "husky",
@@ -34,31 +34,37 @@
   "devDependencies": {
     "@brb-ui/testing": "workspace:*",
     "@brb-ui/vite-lib-config": "workspace:*",
-    "@changesets/changelog-github": "^0.5.1",
-    "@changesets/cli": "^2.27.12",
-    "@commitlint/cli": "^19.6.1",
-    "@commitlint/config-conventional": "^19.6.0",
-    "@emotion/babel-plugin": "^11.13.5",
-    "@types/node": "^24.0.0",
-    "@vitejs/plugin-react": "^4.3.4",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.31.0",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
+    "@oxfmt/binding-linux-x64-gnu": "0.47.0",
+    "@oxlint/binding-linux-x64-gnu": "1.62.0",
+    "@types/node": "^24.12.2",
+    "@vitejs/plugin-react-swc": "^4.3.0",
     "husky": "^9.1.7",
-    "jsdom": "^26.0.0",
-    "lint-staged": "^15.4.3",
-    "oxfmt": "^0.15.0",
-    "oxlint": "^0.15.0",
-    "turbo": "^2.4.4",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11",
-    "vitest": "^3.0.5"
+    "jsdom": "^26.1.0",
+    "lint-staged": "^16.4.0",
+    "oxfmt": "^0.47.0",
+    "oxlint": "^1.62.0",
+    "turbo": "^2.9.7",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2",
+    "vitest": "^4.1.5"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
   },
   "engines": {
     "node": ">=24.0.0"
   },
   "pnpm": {
+    "onlyBuiltDependencies": [
+      "@swc/core",
+      "esbuild",
+      "sharp"
+    ],
     "peerDependencyRules": {
       "allowedVersions": {
         "react": "19",

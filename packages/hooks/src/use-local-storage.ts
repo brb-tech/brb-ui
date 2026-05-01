@@ -36,7 +36,9 @@ export const useLocalStorage = <T>(
       if (localStorageValue !== null) {
         return deserializer(localStorageValue);
       } else {
-        initialValue && localStorage.setItem(key, serializer(initialValue));
+        if (initialValue !== undefined) {
+          localStorage.setItem(key, serializer(initialValue));
+        }
         return initialValue;
       }
     } catch {

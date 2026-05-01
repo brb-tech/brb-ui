@@ -1,8 +1,8 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import react from "@vitejs/plugin-react-swc";
 import { mergeConfig } from "vite";
-import react from "@vitejs/plugin-react";
 
 const storybookDir = fileURLToPath(new URL(".", import.meta.url));
 const systemRoot = path.resolve(storybookDir, "../../../packages/system/src");
@@ -33,9 +33,7 @@ const config: StorybookConfig = {
       plugins: [
         react({
           jsxImportSource: "@brb-ui/system",
-          babel: {
-            plugins: ["@emotion/babel-plugin"]
-          }
+          plugins: [["@swc/plugin-emotion", {}]]
         })
       ]
     });

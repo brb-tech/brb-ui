@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react-swc";
 import dts from "vite-plugin-dts";
 
 /**
@@ -17,9 +17,7 @@ export function createLibViteConfig({ root, entry, external, jsx = true, jsxImpo
     plugins.push(
       react({
         jsxImportSource,
-        babel: {
-          plugins: ["@emotion/babel-plugin"]
-        }
+        plugins: [["@swc/plugin-emotion", {}]]
       })
     );
   }

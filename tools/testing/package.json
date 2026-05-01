@@ -1,44 +1,44 @@
 {
   "name": "@brb-ui/testing",
+  "version": "0.0.0",
   "private": true,
   "description": "Shared Vitest helpers and setup for BRB UI packages",
-  "version": "0.0.0",
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
   "license": "MIT",
-  "type": "module",
-  "main": "src/index.ts",
-  "sideEffects": false,
   "author": "Hippo <hippowuyufan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git",
     "directory": "tools/testing"
   },
-  "homepage": "https://github.com/brb-tech/brb-ui#readme",
-  "bugs": {
-    "url": "https://github.com/brb-tech/brb-ui/issues"
-  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "src/index.ts",
   "exports": {
     ".": "./src/index.ts",
     "./setup-test": "./src/setup-test.ts"
   },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18",
-    "vitest": ">=3.0.0"
-  },
   "dependencies": {
     "@brb-ui/system": "workspace:*",
-    "axe-core": "^4.10.2",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
+    "axe-core": "^4.11.0",
     "vitest-axe": "^0.1.0"
   },
   "devDependencies": {
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "vitest": "^3.0.5"
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "vitest": "^4.1.5"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18",
+    "vitest": ">=4.0.0"
   }
 }

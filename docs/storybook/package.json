@@ -13,7 +13,11 @@
     "@brb-ui/system": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@fontsource/inter": "^5.1.1",
+    "@fontsource/inter": "^5.2.5",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  },
+  "devDependencies": {
     "@storybook/addon-a11y": "^8.6.18",
     "@storybook/addon-essentials": "^8.6.18",
     "@storybook/addon-interactions": "^8.6.18",
@@ -24,17 +28,13 @@
     "@storybook/react-vite": "^8.6.18",
     "@storybook/test": "^8.6.18",
     "@storybook/theming": "^8.6.18",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "storybook": "^8.6.18"
-  },
-  "devDependencies": {
-    "@emotion/babel-plugin": "^11.13.5",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "oxlint": "^0.15.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11"
+    "@swc/plugin-emotion": "^14.9.0",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "oxlint": "^1.62.0",
+    "storybook": "^8.6.18",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2"
   }
 }

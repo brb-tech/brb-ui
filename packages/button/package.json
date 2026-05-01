@@ -1,31 +1,34 @@
 {
   "name": "@brb-ui/button",
-  "description": "A React component that is a base button.",
   "version": "0.0.9",
-  "license": "MIT",
-  "main": "src/index.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
+  "description": "A React component that is a base button.",
   "keywords": [
+    "brb-ui",
     "button",
     "button-group",
-    "react",
-    "nextjs",
-    "brb-ui",
+    "clickable",
     "component",
-    "clickable"
+    "nextjs",
+    "react"
   ],
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "license": "MIT",
   "author": "Hippo <hippowuyufan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git",
     "directory": "packages/button"
   },
-  "homepage": "https://github.com/brb-tech/brb-ui#readme",
-  "bugs": {
-    "url": "https://github.com/brb-tech/brb-ui/issues"
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "vite build",
@@ -33,21 +36,6 @@
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules",
     "prepack": "clean-package",
     "postpack": "clean-package restore"
-  },
-  "devDependencies": {
-    "@brb-ui/testing": "workspace:*",
-    "@brb-ui/vite-lib-config": "workspace:*",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "clean-package": "^2.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11",
-    "vitest": "^3.0.5",
-    "vitest-axe": "^0.1.0"
   },
   "dependencies": {
     "@brb-ui/animations": "workspace:*",
@@ -57,12 +45,24 @@
     "@brb-ui/transition": "workspace:*",
     "@brb-ui/utils": "workspace:*"
   },
+  "devDependencies": {
+    "@brb-ui/testing": "workspace:*",
+    "@brb-ui/vite-lib-config": "workspace:*",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "clean-package": "^2.2.0",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-icons": "^5.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2",
+    "vitest": "^4.1.5",
+    "vitest-axe": "^0.1.0"
+  },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "clean-package": "../../clean-package.config.json"
 }

@@ -1,7 +1,7 @@
 {
   "name": "@brb-ui/vite-react-ts-example",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,17 +14,17 @@
     "@brb-ui/core": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-icons": "^5.5.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.13.5",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
-    "@vitejs/plugin-react": "^4.3.4",
-    "oxlint": "^0.15.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11"
+    "@swc/plugin-emotion": "^14.9.0",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.3.0",
+    "oxlint": "^1.62.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2"
   }
 }

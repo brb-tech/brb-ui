@@ -69,7 +69,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ) : (
           transitions((style, item) => {
             return item ? (
-              // @ts-expect-error react-spring animated.div typings omit children under React 19
               <animated.div
                 style={{ display: "inline-flex", alignItems: "flex-start", ...style }}
                 className={`${prefixCls}-slide`}

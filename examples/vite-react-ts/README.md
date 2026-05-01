@@ -4,8 +4,7 @@ This template provides a minimal setup to get React working in Vite with HMR and
 
 Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- This example uses [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) with [@swc/plugin-emotion](https://github.com/swc-contrib/swc-plugin-emotion) for Fast Refresh and Emotion’s `css` prop.
 
 ## Expanding the ESLint configuration
 

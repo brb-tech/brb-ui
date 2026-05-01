@@ -1,29 +1,32 @@
 {
   "name": "@brb-ui/icon",
-  "description": "A React component that is a base icon.",
   "version": "0.0.9",
-  "license": "MIT",
-  "main": "src/index.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
+  "description": "A React component that is a base icon.",
   "keywords": [
-    "icon",
+    "brb-ui",
     "component",
-    "react",
+    "icon",
     "nextjs",
-    "brb-ui"
+    "react"
   ],
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "license": "MIT",
   "author": "Hippo <hippowuyufan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git",
     "directory": "packages/icon"
   },
-  "homepage": "https://github.com/brb-tech/brb-ui#readme",
-  "bugs": {
-    "url": "https://github.com/brb-tech/brb-ui/issues"
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "vite build",
@@ -32,28 +35,25 @@
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
+  "dependencies": {
+    "@brb-ui/animations": "workspace:*",
+    "@brb-ui/system": "workspace:*",
+    "@brb-ui/utils": "workspace:*"
+  },
   "devDependencies": {
     "@brb-ui/vite-lib-config": "workspace:*",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
     "clean-package": "^2.2.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0",
-    "typescript": "^5.7.3",
-    "vite": "^6.0.11"
-  },
-  "dependencies": {
-    "@brb-ui/system": "workspace:*",
-    "@brb-ui/animations": "workspace:*",
-    "@brb-ui/utils": "workspace:*"
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-icons": "^5.5.0",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.2"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "clean-package": "../../clean-package.config.json"
 }
