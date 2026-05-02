@@ -9,7 +9,7 @@ BRB UI is a React component library monorepo (pnpm + Turborepo). It contains pub
 ### Prerequisites
 
 - **Node.js 18** (see `.nvmrc`). Load via `export NVM_DIR="$HOME/.nvm" && source "$NVM_DIR/nvm.sh"`.
-- **pnpm 8** as the package manager (`pnpm-lock.yaml` is the lockfile).
+- **pnpm 9** via Corepack（版本由 `package.json` 的 `packageManager` 字段管理，无需手动安装）。
 
 ### Key commands
 
