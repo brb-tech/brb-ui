@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "pnpm -w exec oxlint .",
+    "lint": "oxlint .",
     "preview": "vite preview",
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules"
   },
@@ -19,6 +19,7 @@
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "oxlint": "^1.62.0",
     "typescript": "^6.0.3",
     "vite": "^8.0.10"
   }

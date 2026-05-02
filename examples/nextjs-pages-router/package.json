@@ -6,7 +6,7 @@
     "dev": "next dev -p 8003",
     "build": "next build",
     "start": "next start",
-    "lint": "pnpm -w exec oxlint .",
+    "lint": "oxlint .",
     "clean": "rm -rf .turbo && rm -rf .next && rm -rf dist && rm -rf build && rm -rf node_modules"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
     "@types/node": "latest",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
+    "oxlint": "^1.62.0",
     "typescript": "latest"
   }
 }

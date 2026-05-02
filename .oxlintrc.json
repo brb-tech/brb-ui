@@ -29,5 +29,5 @@
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "no-console": "off"
   },
-  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.turbo/**", "examples/**"]
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.turbo/**"]
 }
