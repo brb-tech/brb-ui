@@ -24,7 +24,7 @@ const preview: Preview = {
     }
   },
   decorators: [
-    (StoryFn, context) => {
+    (StoryFn, _context) => {
       return (
         <Provider>
           <StoryFn />

@@ -1,0 +1,11 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "trailingComma": "none",
+  "tabWidth": 2,
+  "printWidth": 120,
+  "semi": true,
+  "singleQuote": false,
+  "arrowParens": "always",
+  "jsxSingleQuote": false,
+  "ignorePatterns": ["dist", "node_modules", "coverage", ".next", "build", "**/dist/**", "**/build/**", "**/.turbo/**"]
+}

@@ -13,8 +13,6 @@ export const Icon = forwardRef<HTMLSpanElement, IconProps>(({ svg, size, classNa
   );
 });
 
-Icon.defaultProps = {};
-
 if (__DEV__) {
   Icon.displayName = "Icon";
 }
