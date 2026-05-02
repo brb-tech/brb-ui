@@ -8,8 +8,8 @@ BRB UI is a React component library monorepo (pnpm + Turborepo). It contains pub
 
 ### Prerequisites
 
-- **Node.js 18** (see `.nvmrc`). Load via `export NVM_DIR="$HOME/.nvm" && source "$NVM_DIR/nvm.sh"`.
-- **pnpm 9** via Corepack（版本由 `package.json` 的 `packageManager` 字段管理，无需手动安装）。
+- **Node.js** (version specified in `.nvmrc`). Load via `export NVM_DIR="$HOME/.nvm" && source "$NVM_DIR/nvm.sh"`.
+- **pnpm** via Corepack（版本由 `package.json` 的 `packageManager` 字段管理，无需手动安装）。
 
 ### Key commands
 
@@ -17,8 +17,8 @@ BRB UI is a React component library monorepo (pnpm + Turborepo). It contains pub
 |---|---|---|
 | Install deps | `pnpm install` | |
 | Build packages | `pnpm build:packages` | Builds only `packages/*` via tsup |
-| Lint | `pnpm lint` | ESLint on `packages/**/src` and `tools/**/src` |
-| Format check | `pnpm format:check` | Prettier |
+| Lint | `pnpm lint` | oxlint on `packages`, `tools`, `docs/storybook` |
+| Format check | `pnpm format:check` | oxfmt |
 | Tests | `pnpm test` | Jest (currently only `packages/button/tests`) |
 | Type check | `pnpm typecheck` | `tsc --noEmit` |
 | Storybook dev | `pnpm dev:storybook` | Port 8000 |

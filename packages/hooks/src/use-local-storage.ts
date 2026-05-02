@@ -18,16 +18,8 @@ export const useLocalStorage = <T>(
   initialValue?: T,
   options?: parserOptions<T>
 ): [T | undefined, Dispatch<SetStateAction<T | undefined>>, () => void] => {
-  if (!isBrowser) {
-    return [initialValue as T, noop, noop];
-  }
-  if (!key) {
-    throw new Error("useLocalStorage key may not be falsy");
-  }
-
   const deserializer = options ? (options.raw ? (value: string) => value : options.deserializer) : JSON.parse;
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const initializer = useRef((key: string) => {
     try {
       const serializer = options ? (options.raw ? String : options.serializer) : JSON.stringify;
@@ -36,7 +28,9 @@ export const useLocalStorage = <T>(
       if (localStorageValue !== null) {
         return deserializer(localStorageValue);
       } else {
-        initialValue && localStorage.setItem(key, serializer(initialValue));
+        if (initialValue) {
+          localStorage.setItem(key, serializer(initialValue));
+        }
         return initialValue;
       }
     } catch {
@@ -47,15 +41,25 @@ export const useLocalStorage = <T>(
     }
   });
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const [state, setState] = useState<T | undefined>(() => initializer.current(key));
+  const [state, setState] = useState<T | undefined>(() => {
+    if (!isBrowser || !key) {
+      return initialValue;
+    }
+    return initializer.current(key);
+  });
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useLayoutEffect(() => setState(initializer.current(key)), [key]);
+  useLayoutEffect(() => {
+    if (!isBrowser || !key) {
+      return;
+    }
+    setState(initializer.current(key));
+  }, [key]);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const set: Dispatch<SetStateAction<T | undefined>> = useCallback(
     (valOrFunc) => {
+      if (!isBrowser || !key) {
+        return;
+      }
       try {
         const newState = typeof valOrFunc === "function" ? (valOrFunc as Function)(state) : valOrFunc;
         if (typeof newState === "undefined") return;
@@ -76,11 +80,13 @@ export const useLocalStorage = <T>(
         // localStorage can throw. Also JSON.stringify can throw.
       }
     },
-    [key, setState]
+    [key, setState, state, options, deserializer]
   );
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const remove = useCallback(() => {
+    if (!isBrowser || !key) {
+      return;
+    }
     try {
       localStorage.removeItem(key);
       setState(undefined);
@@ -89,6 +95,13 @@ export const useLocalStorage = <T>(
       // localStorage can throw.
     }
   }, [key, setState]);
+
+  if (!isBrowser) {
+    return [initialValue as T, noop, noop];
+  }
+  if (!key) {
+    throw new Error("useLocalStorage key may not be falsy");
+  }
 
   return [state, set, remove];
 };

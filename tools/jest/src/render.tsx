@@ -7,9 +7,7 @@ import { toHaveNoViolations } from "jest-axe";
 
 expect.extend(toHaveNoViolations);
 
-const ProviderWrapper: React.JSXElementConstructor<{ children: React.ReactElement }> = (props) => (
-  <Provider {...props} />
-);
+const ProviderWrapper: React.JSXElementConstructor<{ children: React.ReactNode }> = (props) => <Provider {...props} />;
 
 export interface RenderOptions extends TlRenderOptions {
   withSystemProvider?: boolean;

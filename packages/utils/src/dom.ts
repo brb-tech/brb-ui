@@ -14,11 +14,11 @@ export function isHTMLElement(el: any): el is HTMLElement {
 }
 
 export function getOwnerWindow(node?: Element | null): typeof globalThis {
-  return isElement(node) ? getOwnerDocument(node)?.defaultView ?? window : window;
+  return isElement(node) ? (getOwnerDocument(node)?.defaultView ?? window) : window;
 }
 
 export function getOwnerDocument(node?: Element | null): Document {
-  return isElement(node) ? node.ownerDocument ?? document : document;
+  return isElement(node) ? (node.ownerDocument ?? document) : document;
 }
 
 export function getEventWindow(event: Event): typeof globalThis {
