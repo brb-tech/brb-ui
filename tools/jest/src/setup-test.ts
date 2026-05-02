@@ -1,6 +1,10 @@
 import "@testing-library/jest-dom";
 
 import React from "react";
+import { TextEncoder } from "util";
+
+declare const global: typeof globalThis;
+
 global.React = React;
 
 const { getComputedStyle } = window;
@@ -27,7 +31,7 @@ if (typeof window.matchMedia !== "function") {
 }
 
 // Workaround https://github.com/jsdom/jsdom/issues/2524#issuecomment-897707183
-global.TextEncoder = require("util").TextEncoder;
+global.TextEncoder = TextEncoder;
 
 global.ResizeObserver = jest.fn().mockImplementation(() => ({
   observe: jest.fn(),

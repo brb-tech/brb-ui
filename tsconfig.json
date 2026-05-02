@@ -3,9 +3,10 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["dom", "esnext"],
+    "types": ["node"],
     "declaration": true,
     "sourceMap": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "skipLibCheck": true,
     "strict": true,
     "isolatedModules": true,
@@ -15,7 +16,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true
+    "ignoreDeprecations": "6.0"
   },
   "include": ["packages", "tools"],
   "exclude": ["**/node_modules"]

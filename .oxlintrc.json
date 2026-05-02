@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "import", "jsx-a11y", "unicorn", "oxc"],
+  "env": {
+    "builtin": true,
+    "browser": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "version": "19.0.0"
+    }
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "react/rules-of-hooks": "error",
+    "react/exhaustive-deps": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "no-console": "off"
+  },
+  "ignorePatterns": ["**/node_modules/**", "**/dist/**", "**/build/**", "**/.turbo/**"]
+}

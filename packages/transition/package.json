@@ -1,28 +1,31 @@
 {
   "name": "@brb-ui/transition",
-  "description": "A React component transition group.",
   "version": "0.0.9",
-  "license": "MIT",
-  "main": "src/index.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
+  "description": "A React component transition group.",
   "keywords": [
-    "transition",
-    "react",
+    "brb-ui",
     "nextjs",
-    "brb-ui"
+    "react",
+    "transition"
   ],
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "license": "MIT",
   "author": "Hippo <hippowuyufan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git",
     "directory": "packages/transition"
   },
-  "homepage": "https://github.com/brb-tech/brb-ui#readme",
-  "bugs": {
-    "url": "https://github.com/brb-tech/brb-ui/issues"
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup src --dts",
@@ -31,20 +34,21 @@
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "clean-package": "^2.2.0",
-    "react": "^18.2.0",
-    "tsup": "^7.2.0"
-  },
   "dependencies": {
     "@brb-ui/system": "workspace:*",
     "@brb-ui/utils": "workspace:*",
-    "@react-spring/web": "^9.7.3"
+    "@react-spring/web": "^10.0.3"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "clean-package": "^2.2.0",
+    "react": "19.2.5",
+    "tsup": "^8.5.1"
   },
   "peerDependencies": {
     "react": ">=18"
   },
+  "clean-package": "../../clean-package.config.json",
   "tsup": {
     "format": [
       "cjs",
@@ -53,9 +57,5 @@
     "target": "es2019",
     "clean": true,
     "sourcemap": true
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "clean-package": "../../clean-package.config.json"
+  }
 }

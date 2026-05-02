@@ -1,33 +1,36 @@
 {
   "name": "@brb-ui/core",
-  "description": "Build a Simple and easily extensible React UI components using React and Emotion.",
   "version": "0.0.2",
-  "license": "MIT",
-  "main": "src/index.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
+  "description": "Build a Simple and easily extensible React UI components using React and Emotion.",
   "keywords": [
-    "react",
-    "nextjs",
-    "ui",
-    "design-system",
-    "react-components",
-    "uikit",
     "components",
+    "design-system",
     "emotion",
-    "library"
+    "library",
+    "nextjs",
+    "react",
+    "react-components",
+    "ui",
+    "uikit"
   ],
+  "homepage": "https://github.com/brb-tech/brb-ui#readme",
+  "bugs": {
+    "url": "https://github.com/brb-tech/brb-ui/issues"
+  },
+  "license": "MIT",
   "author": "Hippo <hippowuyufan@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brb-tech/brb-ui.git",
     "directory": "packages/core"
   },
-  "homepage": "https://github.com/brb-tech/brb-ui#readme",
-  "bugs": {
-    "url": "https://github.com/brb-tech/brb-ui/issues"
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "main": "src/index.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsup src --dts",
@@ -36,28 +39,29 @@
     "prepack": "clean-package",
     "postpack": "clean-package restore"
   },
-  "devDependencies": {
-    "@types/react": "^18.2.0",
-    "clean-package": "^2.2.0",
-    "react": "^18.2.0",
-    "tsup": "^7.2.0"
-  },
   "dependencies": {
-    "@brb-ui/system": "workspace:*",
+    "@brb-ui/animations": "workspace:*",
     "@brb-ui/button": "workspace:*",
+    "@brb-ui/hooks": "workspace:*",
     "@brb-ui/icon": "workspace:*",
     "@brb-ui/icons": "workspace:*",
-    "@brb-ui/hooks": "workspace:*",
-    "@brb-ui/animations": "workspace:*",
+    "@brb-ui/system": "workspace:*",
     "@brb-ui/transition": "workspace:*",
     "@brb-ui/utils": "workspace:*"
   },
-  "peerDependencies": {
-    "react": ">=18",
-    "react-dom": ">=18",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0"
+  "devDependencies": {
+    "@types/react": "19.2.14",
+    "clean-package": "^2.2.0",
+    "react": "19.2.5",
+    "tsup": "^8.5.1"
   },
+  "peerDependencies": {
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "clean-package": "./clean-package.config.json",
   "tsup": {
     "format": [
       "cjs",
@@ -66,9 +70,5 @@
     "target": "es2019",
     "clean": true,
     "sourcemap": true
-  },
-  "publishConfig": {
-    "access": "public"
-  },
-  "clean-package": "./clean-package.config.json"
+  }
 }

@@ -13,14 +13,17 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       loading,
-      size,
-      iconPlacement,
+      size = "middle",
+      iconPlacement = "right",
       disabled,
-      loadingIcon,
+      loadingIcon = <LoadingOutlinedIcon />,
       iconSize,
       icon,
       iconAnimation,
       iconColor,
+      scheme = "primary",
+      variant = "contained",
+      type = "button",
       ...props
     },
     ref
@@ -42,12 +45,13 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Wrapper
         className={cx(`${prefixCls}-button`, className)}
-        data-scheme={props.scheme}
-        data-variant={props.variant}
+        data-scheme={scheme}
+        data-variant={variant}
         loading={loading ? "" : undefined}
         iconPlacement={iconPlacement}
         size={size}
         ref={ref}
+        type={type}
         hasChildren={!!children}
         disabled={disabled || loading}
         {...props}
@@ -85,15 +89,6 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   }
 );
-
-Button.defaultProps = {
-  scheme: "primary",
-  variant: "contained",
-  size: "middle",
-  type: "button",
-  iconPlacement: "right",
-  loadingIcon: <LoadingOutlinedIcon />
-};
 
 if (__DEV__) {
   Button.displayName = "Button";

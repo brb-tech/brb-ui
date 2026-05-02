@@ -6,17 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "oxlint ."
   },
   "dependencies": {
-    "react": "latest",
-    "react-dom": "latest",
-    "next": "13.4.19"
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
-    "@types/react-dom": "latest"
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "typescript": "latest"
   }
 }
