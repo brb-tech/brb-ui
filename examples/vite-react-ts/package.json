@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "pnpm exec oxlint .",
+    "lint": "oxlint .",
     "preview": "vite preview",
     "clean": "rm -rf .turbo && rm -rf dist && rm -rf build && rm -rf node_modules"
   },
