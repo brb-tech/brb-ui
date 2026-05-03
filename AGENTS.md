@@ -6,10 +6,14 @@
 
 BRB UI is a React component library monorepo (pnpm + Turborepo). It contains publishable packages under `packages/*`, Storybook docs under `docs/storybook`, a Next.js website under `docs/website`, example apps under `examples/*`, and Jest test tooling under `tools/jest`.
 
+### Cloud VM image vs update script
+
+Cursor runs **`.cursor/Dockerfile`** first (builds the container with Node and Corepack shims on `PATH`), then **`environment.json` → `install`** on each wake (`pnpm install` only). Bump **`.nvmrc`** and the **`FROM`** line in **`.cursor/Dockerfile`** together; bump **pnpm** only in **`package.json` → `packageManager`** — Corepack picks it up after `corepack enable`, no pnpm version in the Dockerfile.
+
 ### Prerequisites
 
 - **Node.js** (version specified in `.nvmrc`). Load via `export NVM_DIR="/home/ubuntu/.nvm" && source "$NVM_DIR/nvm.sh"`.
-- **pnpm** via Corepack（版本由 `package.json` 的 `packageManager` 字段管理，无需手动安装）。
+- **pnpm** via Corepack（版本由 `package.json` 的 `packageManager` 字段管理，无需在 Dockerfile 里再写版本号）。Cloud Agent 镜像里执行了 `corepack enable`；本地若未启用 Corepack，请先 `corepack enable`。
 
 ### Key commands
 
